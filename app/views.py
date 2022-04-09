@@ -10,11 +10,9 @@ from .models import *
 
 def homepage(request):
     sentence = "Hakuna Matata"
-    subtitle = "Old lion king is the best lion king"
     context = {
         "sentence": sentence,
-        "subtitle": subtitle,
     }
-    template_name = "index.html"
+    template_name = "app/homepage.html"
 
     return render(request, template_name, context)
