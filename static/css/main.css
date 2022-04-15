@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+}
+.course{
+    font-weight: bold;
+    color: rgb(48, 48, 48);
+    font-size: large;
+}
+.creator{
+    font-size: small;
+    opacity: 60%;
+}
+.cards{
+    font-weight: bold;
+}
+.decksize{
+    font-weight: bold;
+}
+.hoursspent{
+    font-weight: bold;
+}
+.study{
+    font-weight: bold;
+    background-color: #EBD9FC;
+    border-radius: 50px;
+    width: 100px;
+}
+.edit{
+    font-weight: bold;
+    background-color: #EBD9FC;
+    border-radius: 50px;
+    width: 100px;;
+}
+.share{
+    font-weight: bold;
+    background-color: #EBD9FC;
+    border-radius: 50px;
+    width: 100px;
+}
