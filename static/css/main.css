@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  background-color:lavender;
 }
 .course {
   font-weight: bold;
@@ -41,6 +42,7 @@
   width: 100px;
 }
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -53,9 +55,15 @@
 3. Justify the content correctly
 */
 .navigation {
+  font-weight: bold;
+  font-size: large;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  align-items: center;
+  border: 1px solid lavender;
+  padding: 10px 0px 10px 10px;
+  background-color: lavender;
 }
 
 /* 
@@ -64,9 +72,12 @@
   3. Add a gap
   */
 .navigation__right {
+  font-size: medium;
+  font-weight: bold;
   display: grid;
   grid-auto-flow: column;
   grid-gap: 50px;
+  align-items: center;
 }
 
 .navigation img {

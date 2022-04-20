@@ -6,9 +6,8 @@
 {% endblock headers %}
 
 {% block content %}
-    <h1>Homepage</h1>
-    <h3>This page an example of a working html template with django. </h3>
-    <p>The word passed from the backend view for this page is <b>{{sentence}}</b></p>
+    <h1>Recently Studied</h1>
+    <p>Decks: <b>{{sentence}}</b></p>
     <div>
         <p class="course">PS263</p>
         <P class="creator"> By: Jevin Sidhu</P>
@@ -19,6 +18,6 @@
         <button class="edit"><i class="fa-solid fa-pen-to-square"></i>edit</button>
         <button class="share"><i class="fa-solid fa-share-nodes"></i>share</button>
     </div>
-
+    <h1>Your Decks</h1>
     <div class=""></div>
 {% endblock content%}
