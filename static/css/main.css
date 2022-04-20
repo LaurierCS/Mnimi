@@ -4,39 +4,33 @@
     padding: 0; 
     border: 0; 
 }
-.course{
+.card{
+    border: 1px solid rgb(133, 133, 133);
+    border-radius: 15px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-row-gap: 20px;
+
+}
+.card .card__header .card__header__name .card__header__name__course{
     font-weight: bold;
     color: rgb(48, 48, 48);
     font-size: large;
 }
-.creator{
+.card .card__header .card__header__name .card__header__name__creator{
     font-size: small;
     opacity: 60%;
 }
-.cards{
+.card .card__specifics .card__specifics__info{
     font-weight: bold;
 }
-.decksize{
-    font-weight: bold;
-}
-.hoursspent{
-    font-weight: bold;
-}
-.study{
+
+.card button{
     font-weight: bold;
     background-color: #EBD9FC;
     border-radius: 50px;
-    width: 100px;
-}
-.edit{
-    font-weight: bold;
-    background-color: #EBD9FC;
-    border-radius: 50px;
-    width: 100px;;
-}
-.share{
-    font-weight: bold;
-    background-color: #EBD9FC;
-    border-radius: 50px;
+    padding: 5px;
     width: 100px;
 }
