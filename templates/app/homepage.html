@@ -6,9 +6,9 @@
 {% endblock headers %}
 
 {% block content %}
-    <h1>Homepage</h1>
+    <h1>Recently Studied</h1>
+    <p>Decks: <b>{{sentence}}</b></p>
     <h3>This page an example of a working html template with django. </h3>
-    <p>The word passed from the backend view for this page is <b>{{sentence}}</b></p>
     <div class="card">
         <div class="card__header">
             <div class="card__header__name">
@@ -27,6 +27,6 @@
             <button class="card__buttons__share"><i class="fa-solid fa-share-nodes"></i>share</button>
         </div>
     </div>
-
+    
     <div class=""></div>
 {% endblock content%}

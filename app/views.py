@@ -9,7 +9,25 @@ from .models import *
 
 
 def homepage(request):
-    sentence = "Hakuna Matata"
+    sentence = "Home-page"
+    context = {
+        "sentence": sentence,
+    }
+    template_name = "app/homepage.html"
+
+    return render(request, template_name, context)
+
+def about(request):
+    sentence = "About"
+    context = {
+        "sentence": sentence,
+    }
+    template_name = "app/homepage.html"
+
+    return render(request, template_name, context)
+
+def Deck_Page(request):
+    sentence = "Deck Page"
     context = {
         "sentence": sentence,
     }
