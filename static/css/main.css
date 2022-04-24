@@ -1,4 +1,35 @@
-* {
+{
+/* cards
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+  */
+}
+.card{
+    border: 1px solid rgb(133, 133, 133);
+    border-radius: 15px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-row-gap: 20px;
+
+}
+.card .card__header .card__header__name .card__header__name__course{
+    font-weight: bold;
+    color: rgb(48, 48, 48);
+    font-size: large;
+}
+.card .card__header .card__header__name .card__header__name__creator{
+    font-size: small;
+    opacity: 60%;
+}
+.card .card__specifics .card__specifics__info{
+    font-weight: bold;
+}
+
+.card button{
   box-sizing: border-box;
   margin: 0;
   padding: 0;

@@ -8,16 +8,25 @@
 {% block content %}
     <h1>Recently Studied</h1>
     <p>Decks: <b>{{sentence}}</b></p>
-    <div>
-        <p class="course">PS263</p>
-        <P class="creator"> By: Jevin Sidhu</P>
-        <p class="cards">10 Cards Due, 10 Leeches</p>
-        <p class="Decksize">Deck Size: 100 Cards</p>
-        <p class="HoursSpent"> Hours Spent: 10 hours</p>
-        <button class="study"><i class="fa-solid fa-book"></i></i>Study</button>
-        <button class="edit"><i class="fa-solid fa-pen-to-square"></i>edit</button>
-        <button class="share"><i class="fa-solid fa-share-nodes"></i>share</button>
+    <h3>This page an example of a working html template with django. </h3>
+    <div class="card">
+        <div class="card__header">
+            <div class="card__header__name">
+                <p class="card__header__name__course">PS263</p>
+                <P class="card__header__name__creator"> By: Jevin Sidhu</P>
+            </div>
+        <div class="card__specifics">
+            <p class="card__specifics__info">10 Cards Due, 10 Leeches</p>
+        </div>
+        </div>
+        <div class="card__study_button">
+            <button class="study"><i class="fa-solid fa-book"></i></i>Study</button>
+        </div>
+        <div class="card__buttons">
+            <button class="card__buttons__edit"><i class="fa-solid fa-pen-to-square"></i>edit</button>
+            <button class="card__buttons__share"><i class="fa-solid fa-share-nodes"></i>share</button>
+        </div>
     </div>
-    <h1>Your Decks</h1>
+    
     <div class=""></div>
 {% endblock content%}
