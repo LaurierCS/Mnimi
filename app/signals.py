@@ -8,8 +8,8 @@ from .models import *
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     
-    # if created:
-    #     Profile.objects.create(user=instance)
+    if created:
+        UserProfile.objects.create(username = instance.username, password = instance.password, email = instance.email)
 
     return
 
