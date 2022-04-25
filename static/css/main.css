@@ -1,20 +1,22 @@
-{
-/* cards
+/*.cards{
     box-sizing: border-box;
     margin: 0; 
     padding: 0; 
     border: 0; 
-  */
-}
+}*/
+
 .card{
-    border: 1px solid rgb(133, 133, 133);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 2fr 1fr;
     grid-row-gap: 20px;
-
+    background-color: white;
+    width: 270px;
+    height: 150px;
+    line-height: 1.6;
 }
 .card .card__header .card__header__name .card__header__name__course{
     font-weight: bold;
@@ -22,64 +24,55 @@
     font-size: large;
 }
 .card .card__header .card__header__name .card__header__name__creator{
-    font-size: small;
+    font-size: x-small;
     opacity: 60%;
 }
 .card .card__specifics .card__specifics__info{
     font-weight: bold;
+    font-size: smaller;
 }
 
-.card button{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background-color:lavender;
-}
-.course {
-  font-weight: bold;
-  color: rgb(48, 48, 48);
-  font-size: large;
-}
 .creator {
   font-size: small;
   opacity: 60%;
 }
-.cards {
-  font-weight: bold;
-}
-.decksize {
-  font-weight: bold;
-}
-.hoursspent {
-  font-weight: bold;
-}
+
+.card__buttons__edit{
+    background-color: #ebd9fc;
+    border-radius: 10px;;
+    width: 70px;
+    height:30px;
+  }
+
+.card__buttons__share{
+    background-color: #ebd9fc;
+    border-radius: 10px;
+    width: 70px;
+    height:30px;
+  }
+
 .study {
-  font-weight: bold;
   background-color: #ebd9fc;
-  border-radius: 50px;
-  width: 100px;
+  border-radius: 10px;;
+  width: 70px;
+  height:30px;
 }
-.edit {
-  font-weight: bold;
-  background-color: #ebd9fc;
-  border-radius: 50px;
-  width: 100px;
-}
-.share {
-  font-weight: bold;
-  background-color: #ebd9fc;
-  border-radius: 50px;
-  width: 100px;
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 35px;
 }
 
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
 /*
 1. Make display behavior grid
 2. Change the flow of the elements from row to column
@@ -92,9 +85,9 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid lavender;
+  border: 1px solid #ebd9fc;
   padding: 10px 0px 10px 10px;
-  background-color: lavender;
+  background-color: #ebd9fc;
 }
 
 /* 
