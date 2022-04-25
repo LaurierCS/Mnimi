@@ -58,6 +58,8 @@ def registration_view(request):
     }
     
     template_name = 'app/registration.html'
+    
+    return render(request, template_name, context)
 
 # login main view
 def login_view(request):
@@ -68,6 +70,8 @@ def login_view(request):
     }
     
     template_name = 'app/login.html'
+    
+    return render(request, template_name, context)
     
 # login handler
 def login_handler(request):
