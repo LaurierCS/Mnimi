@@ -65,6 +65,9 @@
     gap: 35px;
 }
 
+.card i{
+    margin-right: 5px;
+}
 
 * {
     box-sizing: border-box;
