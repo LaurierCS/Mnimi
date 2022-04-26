@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import *
 
-
 def homepage(request):
     sentence = "Home-page"
     context = {
@@ -17,20 +16,20 @@ def homepage(request):
 
     return render(request, template_name, context)
 
-def about(request):
-    sentence = "About"
-    context = {
-        "sentence": sentence,
-    }
-    template_name = "app/homepage.html"
-
-    return render(request, template_name, context)
-
-def Deck_Page(request):
+def deck(request):
     sentence = "Deck Page"
     context = {
         "sentence": sentence,
     }
-    template_name = "app/homepage.html"
+    template_name = "app/deck.html"
+
+    return render(request, template_name, context)
+
+def study(request):
+    sentence = "Study Page"
+    context = {
+        "sentence": sentence,
+    }
+    template_name = "app/study.html"
 
     return render(request, template_name, context)
