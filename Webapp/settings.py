@@ -128,3 +128,9 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_assets')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_assets')
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
+
+# Logs reset link to the console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
