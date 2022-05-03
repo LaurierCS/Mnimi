@@ -27,6 +27,10 @@ def deck(request):
 
 def study(request):
     sentence = "Study Page"
+    deck = Deck.getDeck(1, request.user.id)
+    print(deck.cardCount)
+
+
     context = {
         "sentence": sentence,
     }
