@@ -9,30 +9,42 @@ from .models import *
 
 def homepage(request):
     sentence = "Home-page"
+    # Retrieving users decks
+    userDecks = Deck.getUsersDecks(request.user.id)
+    print(userDecks)
     context = {
         "sentence": sentence,
+        "userDecks": userDecks
     }
     template_name = "app/homepage.html"
 
     return render(request, template_name, context)
 
-def deck(request):
+def deck(request, deckId):
     sentence = "Deck Page"
+    userDeck = Deck.getDeck(deckId, request.user.id)
+    if userDeck == False:
+        userDeck = "Deck does not exist!"
+    print(userDeck)
+
     context = {
         "sentence": sentence,
+        "userDeck": userDeck
     }
     template_name = "app/deck.html"
 
     return render(request, template_name, context)
 
-def study(request):
+def study(request, deckId, cardId):
     sentence = "Study Page"
-    deck = Deck.getDeck(1, request.user.id)
-    print(deck.cardCount)
-
+    userCards = Card.getDecksCards(deckId, request.user.id)
+    if userCards == False:
+        userCards = "Deck does not exist!"
+    print(userCards)
 
     context = {
         "sentence": sentence,
+        "userCards": userCards
     }
     template_name = "app/study.html"
 
