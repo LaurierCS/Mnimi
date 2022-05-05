@@ -1,8 +1,24 @@
 {% extends "base.html" %} {% load static %} {% block headers %}
 <title>Deck Page</title>
 {% endblock headers %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+<script
+      src="https://kit.fontawesome.com/8f0bee7cc7.js"
+      crossorigin="anonymous"
+></script>
 
-<h1>DECK NAME</h1>
-<p>By: NAME HERE</p>
+<div class="deck">
+    <div class="header">
+        <h1>PS263</h1>
+        <p>By: Jevin Sidhu</p>
+    </div>
+    <div class="deck__buttons">
+        <button class="deck__buttons"><i class="fa-solid fa-plus"></i>New Card</button>
+        <button class="deck__buttons"><i class="fa-solid fa-share-nodes"></i>Share</button>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Search for a Card">
+    </div>
+</div>
 
 {% endblock content%}
