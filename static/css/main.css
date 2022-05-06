@@ -5,6 +5,8 @@
     border: 0; 
 }*/
 
+/*homepage elements*/
+
 .card{
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
@@ -53,7 +55,7 @@
 
 .study {
   background-color: #ebd9fc;
-  border-radius: 10px;;
+  border-radius: 10px;
   width: 70px;
   height: 30px;
 }
@@ -90,7 +92,6 @@
   line-height: 10px;
 }
 
-
 .deck i{
   margin-right: 5px;
 }
@@ -105,6 +106,40 @@
   border: none;
 }
 
+/*Study page*/
+
+.studycard{
+  height: 300px;
+  width: 200px;
+  border-radius: 10px;
+  border:  1px solid rgb(0, 0, 0);
+}
+
+.study__button{
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+}
+
+.bad__button {
+  background-color: #ED6767;
+}
+
+.good__button {
+  background-color: #84BB94;
+}
+
+.great__button {
+  background-color: #528FC8;
+}
+
+.back__button {
+  background-color: #EBD9FC;;
+}
+
+.addcards__button {
+  background-color: #EBD9FC;;
+}
 
 * {
     box-sizing: border-box;
