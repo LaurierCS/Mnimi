@@ -26,7 +26,6 @@ def deck(request, deckId):
     if userDeck == False:
         userDeck = "Deck does not exist!"
     print(userDeck)
-
     context = {
         "sentence": sentence,
         "userDeck": userDeck
@@ -37,14 +36,14 @@ def deck(request, deckId):
 
 def study(request, deckId, cardId):
     sentence = "Study Page"
-    userCards = Card.getDecksCards(deckId, request.user.id)
-    if userCards == False:
-        userCards = "Deck does not exist!"
-    print(userCards)
+    # userCards = Card.getDecksCards(deckId, request.user.id)
+    # if userCards == False:
+    #     userCards = "Deck does not exist!"
+    # print(userCards)
 
     context = {
         "sentence": sentence,
-        "userCards": userCards
+       #"userCards": userCards
     }
     template_name = "app/study.html"
 
