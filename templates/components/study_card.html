@@ -1,0 +1,39 @@
+
+<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<div class="card-grid">
+    <div class="front flip">
+      <img src="https://imgs.search.brave.com/Ff5cqp-bvmiOHfRcFrOngoLF03zvE3Z5SdisTZttCnU/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvYXBwbGUvYXBw/bGVfUE5HMTI0MDUu/cG5n">
+      <p>Question</p>
+      <p><button type="button" onclick=""><span class="material-symbols-outlined">
+arrow_back
+        </span></button>1/100<button type="button" onclick=""><span class="material-symbols-outlined">
+arrow_forward
+      </span></button></p>
+    </div>
+    <div class="back unflip">
+      <p> Answer </p> 
+      <p>Explanation</p>
+   </div>
+ </div>
+
+
+<!-- 
+Not working.. not sure why 
+
+<script>
+  $(".card-grid").flip({
+  trigger: "manual"
+});
+
+$(".flip").click(function() {
+  $(this)
+    .closest(".card-grid")
+    .flip(true);
+});
+
+$(".unflip").click(function() {
+  $(this)
+    .closest(".card-grid")
+    .flip(false);
+});
+</script>  -->
