@@ -14,7 +14,14 @@
             {% include 'components/card.html' %} 
             {% include 'components/card.html' %} 
     </div>
-    
-    
+
+    <br>
+    <h1>Your Decks</h1>
+    <button class="new_deck_button">+ New Deck</button>
+    <br>
+    <div class="cards">
+        {% include 'components./card.html' %}
+    </div>
+
     <div class=""></div>
 {% endblock content%}

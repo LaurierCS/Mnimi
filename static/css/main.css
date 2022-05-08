@@ -1,6 +1,23 @@
+/* General */
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: #000; 
+  text-decoration: none;
+}
+a:visited { color: #000; }
+a:hover { color: #141414; }
+a:active { color: #000; } 
+
 /*.cards{
     box-sizing: border-box;
-    margin: 0; 
+    margin: 0;  
     padding: 0; 
     border: 0; 
 }*/
@@ -111,6 +128,15 @@
   font-size: smaller;
 }
 
+.new_deck_button {
+  background-color: #ebd9fc;
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 10px;
+
+}
 /*Study page*/
 
 .studycard{
@@ -183,13 +209,6 @@
 .addcards__button {
   background-color: #EBD9FC;;
 }
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
 
 /*
 1. Make display behavior grid
