@@ -1,7 +1,9 @@
 <div class="deck">
     <div class="deck__header">
         <div class="deck__header__name">
-            <p class="deck__header__name__course">{{deck.deckName}}</p>
+            <a class ="deck_header_name_link" href="/deck/{{deck.id}}/">
+            <p class="deck__header__name__course" href=>{{deck.deckName}}</p>
+            </a>
             <P class="deck__header__name__creator">Created by: {{deck.creator_username}}</P>
         </div>
     <div class="deck__specifics">
