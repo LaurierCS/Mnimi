@@ -14,7 +14,7 @@ def homepage(request):
     print(userDecks)
     context = {
         "sentence": sentence,
-        "userDecks": userDecks
+        "decks": userDecks
     }
     template_name = "app/homepage.html"
 
