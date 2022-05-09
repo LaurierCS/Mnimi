@@ -9,10 +9,9 @@
     <h1>Recently Studied</h1>
     <p>Decks: <b>{{sentence}}</b></p>
     <div class="cards">
-            {% include 'components/card.html' %} 
-            {% include 'components/card.html' %} 
-            {% include 'components/card.html' %} 
-            {% include 'components/card.html' %} 
+        {% for deck in decks %}
+            {% include 'components/Deck.html' %} 
+        {% endfor %}
     </div>
     
     
