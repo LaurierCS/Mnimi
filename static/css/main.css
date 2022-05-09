@@ -22,9 +22,9 @@ a:active { color: #000; }
     border: 0; 
 }*/
 
-/*homepage elements*/
+/* homepage elements */
 
-.card{
+.deck{
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
     padding: 20px;
@@ -37,16 +37,16 @@ a:active { color: #000; }
     height: 150px;
     line-height: 1.6;
 }
-.card .card__header .card__header__name .card__header__name__course{
+.deck .deck__header .deck__header__name .deck__header__name__course{
     font-weight: bold;
     color: rgb(48, 48, 48);
     font-size: large;
 }
-.card .card__header .card__header__name .card__header__name__creator{
+.deck .deck__header .deck__header__name .deck__header__name__creator{
     font-size: x-small;
     opacity: 60%;
 }
-.card .card__specifics .card__specifics__info{
+.deck .deck__specifics .deck__specifics__info{
     font-weight: bold;
     font-size: smaller;
 }
@@ -56,14 +56,14 @@ a:active { color: #000; }
   opacity: 60%;
 }
 
-.card__buttons__edit{
+.deck__buttons__edit{
     background-color: #ebd9fc;
     border-radius: 10px;;
     width: 70px;
     height: 30px;
   }
 
-.card__buttons__share{
+.deck__buttons__share{
     background-color: #ebd9fc;
     border-radius: 10px;
     width: 70px;
@@ -83,8 +83,18 @@ a:active { color: #000; }
     grid-template-columns: repeat(auto-fit, 270px);
 }
 
-.card i{
+.deck i{
     margin-right: 5px;
+}
+
+.new_deck_button {
+  background-color: #ebd9fc;
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 10px;
+
 }
 
 /* deck elements */
@@ -128,15 +138,6 @@ a:active { color: #000; }
   font-size: smaller;
 }
 
-.new_deck_button {
-  background-color: #ebd9fc;
-  float: right;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  border-radius: 10px;
-
-}
 /*Study page*/
 
 .studycard{
