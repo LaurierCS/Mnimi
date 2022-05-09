@@ -25,9 +25,9 @@ a:active { color: #000; }
 /* homepage elements */
 
 .deck{
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid lavender;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px 15px 15px 15px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 2fr 1fr;
@@ -77,7 +77,7 @@ a:active { color: #000; }
   height: 30px;
 }
 
-.cards{
+.decks{
     display: grid;
     gap: 50px;
     grid-template-columns: repeat(auto-fit, 270px);
@@ -99,7 +99,7 @@ a:active { color: #000; }
 
 /* deck elements */
 
-.deck{
+.deckpage{
   background-color: #EBD9FC;
   display: grid;
   grid-template-rows: 2fr 1fr 1fr;
@@ -108,7 +108,7 @@ a:active { color: #000; }
   height: 170px;
 }
 
-.deck__buttons{
+.deckpage__buttons{
   background-color: #ffffff;
   border-radius: 30px;
   width: 70px;
@@ -119,11 +119,11 @@ a:active { color: #000; }
   line-height: 10px;
 }
 
-.deck i{
+.deckpage i{
   margin-right: 5px;
 }
 
-.deck input[type=text]{
+.deckpage input[type=text]{
   width: 98%;
   height: 30px;
   border-radius: 10px;
