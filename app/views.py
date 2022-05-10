@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import *
 
+@login_required
 def homepage(request):
     sentence = "Home-page"
     # Retrieving users decks
@@ -20,6 +21,7 @@ def homepage(request):
 
     return render(request, template_name, context)
 
+@login_required
 def deck(request, deckId):
     sentence = "Deck Page"
     userDeck = Deck.getDeck(deckId, request.user.id)
@@ -34,6 +36,7 @@ def deck(request, deckId):
 
     return render(request, template_name, context)
 
+@login_required
 def study(request, deckId, cardId):
     sentence = "Study Page"
     # userCards = Card.getDecksCards(deckId, request.user.id)
