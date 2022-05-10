@@ -245,3 +245,24 @@ a:active { color: #000; }
 .navigation img {
   width: 50px;
 }
+
+/* login page */
+.login {
+  margin: 0 auto;
+}
+
+.login td {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.login p, a{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.login > div {
+  display: grid;
+  grid-template-columns: 1fr, 2fr;
+  align-items: center;
+}
