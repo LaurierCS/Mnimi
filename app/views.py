@@ -51,3 +51,14 @@ def study(request, deckId, cardId):
     template_name = "app/study.html"
 
     return render(request, template_name, context)
+
+def create_account(request):
+    sentence = "Create Account Page"
+
+    context = {
+        "sentence": sentence,
+    }
+
+    template_name = "app/create_account.html"
+
+    return render(request, template_name)

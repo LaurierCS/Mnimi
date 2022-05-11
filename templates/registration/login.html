@@ -1,37 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div class="login_text">
   {% if form.errors %}
-    <p class="login" >Your username and password didn't match. Please try again.</p>
+    <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
 
   {% if next %}
     {% if user.is_authenticated %}
-      <p class="login">Your account doesn't have access to this page. To proceed,
+      <p>Your account doesn't have access to this page. To proceed,
       please login with an account that has access.</p>
     {% else %}
-      <p class="login">Please login to see this page.</p>
+      <p>Please login to see this page.</p>
     {% endif %}
   {% endif %}
 
-  <form class="login" method="post" action="{% url 'login' %}">
+  <h1>Welcome Back</h1>
+  <p>Please fill in your username and password</p>       
+</div>
+
+
+  <form class="login_form" method="post" action="{% url 'login' %}">
     {% csrf_token %}
     <table>
       <tr>
         <div><td>{{ form.username.label_tag }}</td></div>
-        <td>{{ form.username }}</td>
+        <td class="login_input">{{ form.username }}</td>
       </tr>
       <tr>
         <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
+        <td class="login_input">{{ form.password }}</td>
       </tr>
     </table>
-    <input type="submit" value="login" />
+    <input class="login_button" type="submit" value="login" />
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
-
+  
+  <div class="create_account_link"><a href="{% url 'create_account' %}">Create an account</a></div>
   {# Assumes you setup the password_reset view in your URLconf #}
-  <p class="login"><a class="login" href="{% url 'password_reset' %}">Lost password?</a></p>
+  <div class="password_reset_link"><p><a href="{% url 'password_reset' %}">Forgot password?</a></p></div>
 
 {% endblock %}
