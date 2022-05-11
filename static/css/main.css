@@ -15,6 +15,10 @@ a:visited { color: #000; }
 a:hover { color: #141414; }
 a:active { color: #000; } 
 
+button {
+  cursor: pointer;
+}
+
 /*.cards{
     box-sizing: border-box;
     margin: 0;  
@@ -23,6 +27,16 @@ a:active { color: #000; }
 }*/
 
 /* homepage elements */
+
+.homepage {
+  padding: 25px 50px;
+}
+
+.homepage__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 25px 0;
+}
 
 .deck{
     border: 1px solid lavender;
@@ -34,7 +48,6 @@ a:active { color: #000; }
     grid-row-gap: 20px;
     background-color: white;
     width: 270px;
-    height: 150px;
     line-height: 1.6;
 }
 .deck .deck__header .deck__header__name .deck__header__name__course{
@@ -89,9 +102,6 @@ a:active { color: #000; }
 
 .new_deck_button {
   background-color: #ebd9fc;
-  float: right;
-  margin-left: auto;
-  margin-right: auto;
   padding: 10px;
   border-radius: 10px;
 
@@ -224,7 +234,7 @@ a:active { color: #000; }
   justify-content: space-between;
   align-items: center;
   border: 1px solid #F2EBFB;
-  padding: 10px 0px 10px 10px;
+  padding: 25px 50px;
   background-color: #F2EBFB;
 }
 
