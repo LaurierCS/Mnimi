@@ -12,7 +12,8 @@ def homepage(request):
     sentence = "Home-page"
     # Retrieving users decks
     userDecks = Deck.getUsersDecks(request.user.id)
-    print(userDecks)
+    dueCards = CardLedger.getNumberofDueCards(406, request.user.id)
+    print(dueCards)
     context = {
         "sentence": sentence,
         "decks": userDecks

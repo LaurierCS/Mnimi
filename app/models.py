@@ -72,6 +72,7 @@ class Card(models.Model):
 class CardLedger(models.Model):
     id = models.AutoField(primary_key=True)
 
+    deck = models.ForeignKey(Deck, on_delete = models.DO_NOTHING, default=getDeckorCreate)
     user_account = models.ForeignKey(User, on_delete=models.DO_NOTHING,  default=getUserOrCreate)
     card = models.ForeignKey(Card, on_delete=models.DO_NOTHING)
 
@@ -80,4 +81,8 @@ class CardLedger(models.Model):
     leech = models.IntegerField(default=0)
 
     def __str__(self):
-        return "{} {}".format(self.user.id, self.card.front_text)
+        return "User ID: {}, Deck ID: {}, Card ID: {}".format(self.user_account.id, self.deck.id, self.card.id)
+    
+    def getNumberofDueCards(deck_ID, user_ID):
+        dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today()).count()
+        return dueCards
