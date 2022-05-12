@@ -6,15 +6,17 @@
 {% endblock headers %}
 
 {% block content %}
-    <main class="homepage">
-    <div class="homepage__header">
-        <h1>Your Decks</h1>
-        <button class="new_deck_button">+ New Deck</button>
-    </div>
+    <h1>Recently Studied</h1>
+    <p>Decks: <b>{{sentence}}</b></p>
     <div class="decks">
         {% for deck in decks %}
             {% include 'components/Deck.html' %} 
         {% endfor %}
+
     </div>
-    </main>
+    
+    <br>
+    <h1>Your Decks</h1>
+    <button class="new_deck_button">+ New Deck</button>
+    <br>
 {% endblock content%}
