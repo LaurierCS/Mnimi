@@ -110,18 +110,21 @@ a:active { color: #000; }
 
 .deckpage__buttons{
   background-color: #ffffff;
-  border-radius: 30px;
-  width: 70px;
-  height: 20px;
   font-size: x-small;
+  height: 30px;
+  width: 79px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  line-height: 10px;
+  border-radius: 23px;
+  padding: 0px 10px;
+  align-items: center;
+  grid-auto-flow: column;
+  column-gap: 5px;
 }
 
 .deckpage i{
-  margin-right: 5px;
+  margin-right: -8px;
 }
+
 
 .deckpage input[type=text]{
   width: 98%;
@@ -218,15 +221,6 @@ a:active { color: #000; }
 
 .studycard h1{
   background-color: #ffffff;
-}
-
-* #rectangle{
-  width:300px;
-  height:300px;
-  background: #F2EBFB;
-  border-radius: 50px;
-  transform: rotate(45deg);
-  position: relative; right:60px;
 }
 
 /*nocards pop-up*/
