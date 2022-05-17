@@ -7,6 +7,11 @@
   background-color: #ebd9fc;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 a {
   color: #000; 
   text-decoration: none;
@@ -14,6 +19,10 @@ a {
 a:visited { color: #000; }
 a:hover { color: #141414; }
 a:active { color: #000; } 
+
+button {
+  cursor: pointer;
+}
 
 /*.cards{
     box-sizing: border-box;
@@ -23,6 +32,16 @@ a:active { color: #000; }
 }*/
 
 /* homepage elements */
+
+.homepage {
+  padding: 25px 50px;
+}
+
+.homepage__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 25px 0;
+}
 
 .deck{
     border: 1px solid lavender;
@@ -34,7 +53,6 @@ a:active { color: #000; }
     grid-row-gap: 20px;
     background-color: white;
     width: 270px;
-    height: 150px;
     line-height: 1.6;
 }
 .deck .deck__header .deck__header__name .deck__header__name__course{
@@ -89,9 +107,6 @@ a:active { color: #000; }
 
 .new_deck_button {
   background-color: #ebd9fc;
-  float: right;
-  margin-left: auto;
-  margin-right: auto;
   padding: 10px;
   border-radius: 10px;
 
@@ -283,7 +298,7 @@ a:active { color: #000; }
   justify-content: space-between;
   align-items: center;
   border: 1px solid #F2EBFB;
-  padding: 10px 0px 10px 10px;
+  padding: 25px 50px;
   background-color: #F2EBFB;
 }
 
@@ -314,4 +329,68 @@ a:active { color: #000; }
   border-radius: 50px;
   transform: rotate(45deg); 
   position: relative; right:140px; top: 40px;
+}
+
+/* login page */
+.login_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: calc(100% - 52px);
+}
+
+.login_wrapper {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  background-color: #F6FBF9;
+  border-radius: 10px;
+  padding: 50px 100px;
+  border: 1px solid #A9BFB6;
+}
+
+.login_wrapper__header {
+  margin: 0 0 40px 0;
+}
+
+.login_wrapper__header h1 {
+  margin: 0 0 10px 0;
+}
+
+.login_wrapper__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0 0 0;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login_form input {
+  padding: 20px;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+}
+
+.create_account_link,
+.password_reset_link {
+  text-decoration: underline;
+}
+
+.login_button {
+  background-color: #EBD9FC;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.login_input {
+  padding: 2px;
 }

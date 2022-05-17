@@ -44,6 +44,11 @@ class Deck(models.Model):
         except ObjectDoesNotExist:
             deck = False
         return deck
+    def createDeck(deck_name, user_acc):
+        new_deck = Deck(user_account = user_acc, creator_username = user_acc.username, deckName = deck_name, dateCreated = datetime.today(), editable = True )
+        new_deck.save()
+        return
+
 
 # Cards class
 class Card(models.Model):
@@ -72,6 +77,7 @@ class Card(models.Model):
 class CardLedger(models.Model):
     id = models.AutoField(primary_key=True)
 
+    deck = models.ForeignKey(Deck, on_delete = models.DO_NOTHING, default=getDeckorCreate)
     user_account = models.ForeignKey(User, on_delete=models.DO_NOTHING,  default=getUserOrCreate)
     card = models.ForeignKey(Card, on_delete=models.DO_NOTHING)
 
@@ -80,4 +86,12 @@ class CardLedger(models.Model):
     leech = models.IntegerField(default=0)
 
     def __str__(self):
-        return "{} {}".format(self.user.id, self.card.front_text)
+        return "User ID: {}, Deck ID: {}, Card ID: {}".format(self.user_account.id, self.deck.id, self.card.id)
+    
+    def getNumberofDueCards(deck_ID, user_ID):
+        dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today()).count()
+        return dueCards
+
+    def getDueCards(deck_ID, user_ID):
+        dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today())
+        return dueCards
