@@ -44,6 +44,11 @@ class Deck(models.Model):
         except ObjectDoesNotExist:
             deck = False
         return deck
+    def createDeck(deck_name, user_acc):
+        new_deck = Deck(user_account = user_acc, creator_username = user_acc.username, deckName = deck_name, dateCreated = datetime.today(), editable = True )
+        new_deck.save()
+        return
+
 
 # Cards class
 class Card(models.Model):

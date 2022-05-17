@@ -16,5 +16,12 @@
             {% include 'components/Deck.html' %} 
         {% endfor %}
     </div>
+    <div class="temp_create_deck_form">
+        <form action="{% url 'index' %}", method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     </main>
 {% endblock content%}
