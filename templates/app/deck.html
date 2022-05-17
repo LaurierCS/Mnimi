@@ -9,15 +9,23 @@
 
 <div class="deckpage">
     <div class="header">
-        <h1>PS263</h1>
-        <p class="creator">By: Jevin Sidhu</p>
+        <h1>{{deck.deckName}}</h1>
+        <p class="creator">By: {{deck.creator_username}}</p>
     </div>
     <div class="deckpage__buttons">
         <button class="deckpage__buttons"><i class="fa-solid fa-plus"></i>New Card</button>
         <button class="deckpage__buttons"><i class="fa-solid fa-share-nodes"></i>Share</button>
     </div>
     <div class="search">
-        <input type="text" placeholder="Search for a Card">
+        <input type="text" class="searching" placeholder="Search for a Card">
+    </div>
+    <div class="card_compenents">
+        <div class="card">
+            <button class="card_edit_button"><i class="fa-solid fa-pencil"></i></button>
+            <h1 class="card_question"> New Card Question </h1>
+            <h1 class="card_answer"> New Card answer</h1>
+            <div class="card_verticalline"></div>
+        </div>
     </div>
 </div>
 
