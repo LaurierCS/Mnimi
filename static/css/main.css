@@ -138,6 +138,44 @@ a:active { color: #000; }
   color: #ffffff;
 }
 
+.card{
+  height: 252px;
+  width: 100%;
+  border-radius: 10px;
+  border:  1px solid rgb(0, 0, 0);
+  margin-top: 40px;
+  background-color: #ffffff;
+}
+
+.card h1{
+  background: transparent;
+  opacity: 40%;
+  font-size: small;
+}
+
+.card_edit_button{
+  background-color: #ebd9fc;
+  border-radius: 10px;
+  width: 40px;
+  height: 30px;
+  display: grid;
+  align-items: center;
+  position: relative;
+  left: 95%;
+  margin-top: 10px;
+}
+
+.card_answer{
+  text-align: right;
+}
+
+.card_verticalline{
+  width: 1px; 
+  background-color: rgb(192, 192, 192); 
+  height: 150px; 
+  margin: auto;
+}
+
 .deckpage i{
   background-color: transparent;
 }
@@ -180,7 +218,6 @@ a:active { color: #000; }
 .Answer{
   text-align: right;
 }
-
 
 .bad__button {
   background-color: #ED6767;
