@@ -91,3 +91,7 @@ class CardLedger(models.Model):
     def getNumberofDueCards(deck_ID, user_ID):
         dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today()).count()
         return dueCards
+
+    def getDueCards(deck_ID, user_ID):
+        dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today())
+        return dueCards

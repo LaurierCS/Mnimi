@@ -37,30 +37,27 @@ def homepage(request):
 
 @login_required
 def deck(request, deckId):
-    sentence = "Deck Page"
-    userDeck = Deck.getDeck(deckId, request.user.id)
-    if userDeck == False:
-        userDeck = "Deck does not exist!"
-    print(userDeck)
+    deck = Deck.getDeck(deckId, request.user.id)
+    if deck == False:
+        deck = "Deck does not exist!"
+    deckCards = Card.getDecksCards(deckId)
+    if deckCards == False:
+        deckCards = "Deck does not exist!"
+    print(deckCards)
     context = {
-        "sentence": sentence,
-        "userDeck": userDeck
+        "deck": deck,
+        "deckCards": deckCards
     }
     template_name = "app/deck.html"
 
     return render(request, template_name, context)
 
 @login_required
-def study(request, deckId, cardId):
-    sentence = "Study Page"
-    # userCards = Card.getDecksCards(deckId, request.user.id)
-    # if userCards == False:
-    #     userCards = "Deck does not exist!"
-    # print(userCards)
-
+def study(request, deckId):
+    dueCards = CardLedger.getDueCards(deckId, request.user.id)
+    print(dueCards)
     context = {
-        "sentence": sentence,
-       #"userCards": userCards
+        "dueCards": dueCards
     }
     template_name = "app/study.html"
 
