@@ -1,11 +1,13 @@
 <div class="deck">
     <div class="deck__header">
         <div class="deck__header__name">
-            <p class="deck__header__name__course">{{deck.deckName}}</p>
-            <P class="deck__header__name__creator">Created by: {{deck.creator_username}}</P>
+            <a class ="deck_header_name_link" href="/deck/{{deck.0.id}}/">
+            <p class="deck__header__name__course" href=>{{deck.0.deckName}}</p>
+            </a>
+            <P class="deck__header__name__creator">Created by: {{deck.0.creator_username}}</P>
         </div>
     <div class="deck__specifics">
-        <p class="deck__specifics__info">10 Cards Due, 10 Leeches</p>
+        <p class="deck__specifics__info">{{ deck.1 }} Cards Due, 10 Leeches</p>
     </div>
     </div>
     <div class="deck__study__button">
