@@ -1,33 +1,32 @@
 {% extends "base.html" %} {% load static %} {% block headers %}
 <title>Study Page</title>
 {% endblock headers %} {% block content %}
-<h1>Study Page</h1>
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
 <script
       src="https://kit.fontawesome.com/8f0bee7cc7.js"
       crossorigin="anonymous"
 ></script>
-
-<div class="studycard">
-        <h1 class="Question">Question</h1>
-        <h1 class="Answer">Answer</h1>
-        <div class="verticalline"></div>
-</div>
-<div class="studybutton">
-    <button class="bad__button" style="color:white">Bad</button>
-    <button class="good__button" style="color:white">Good</button>
-    <button class="great__button" style="color:white">Great</button>
-</div>
-
-
-<div class="nocards">
-    <div class="header">
-        <h1>OH NO! You don't have any cards.</h1>
+<div class="studypage">
+    <div class="rectangle"></div>
+    <div class="studycard">
+            <h1 class="Question">Question</h1>
+            <h1 class="Answer">Answer</h1>
+            <div class="verticalline"></div>
     </div>
-    <div class="nocards__buttons">
-        <button class="back__button">Go Back</button>
-        <button class="addcards__button">Add cards</button>
+    <div class="studybutton">
+        <button class="bad__button" style="color:white">Bad</button>
+        <button class="good__button" style="color:white">Good</button>
+        <button class="great__button" style="color:white">Great</button>
+    </div>
+    <div class="nocards">
+        <div class="header">
+            <h1>OH NO! You don't have any cards.</h1>
+        </div>
+        <div class="nocards__buttons">
+            <button class="back__button">Go Back</button>
+            <button class="addcards__button">Add cards</button>
+        </div>
     </div>
 </div>
 

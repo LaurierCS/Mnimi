@@ -1,10 +1,10 @@
-/* General */
 * {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
+  background-color: #ebd9fc;
 }
 
 html, body {
@@ -125,18 +125,21 @@ button {
 
 .deckpage__buttons{
   background-color: #ffffff;
-  border-radius: 30px;
-  width: 70px;
-  height: 20px;
   font-size: x-small;
+  height: 30px;
+  width: 79px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  line-height: 10px;
+  border-radius: 23px;
+  padding: 0px 10px;
+  align-items: center;
+  grid-auto-flow: column;
+  column-gap: 5px;
 }
 
 .deckpage i{
-  margin-right: 5px;
+  margin-right: -8px;
 }
+
 
 .deckpage input[type=text]{
   width: 98%;
@@ -146,6 +149,50 @@ button {
   margin-top: 8px;
   font-size: 15px;
   border: none;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.card{
+  height: 252px;
+  width: 100%;
+  border-radius: 10px;
+  border:  1px solid rgb(0, 0, 0);
+  margin-top: 40px;
+  background-color: #ffffff;
+}
+
+.card h1{
+  background: transparent;
+  opacity: 40%;
+  font-size: small;
+}
+
+.card_edit_button{
+  background-color: #ebd9fc;
+  border-radius: 10px;
+  width: 40px;
+  height: 30px;
+  display: grid;
+  align-items: center;
+  position: relative;
+  left: 95%;
+  margin-top: 10px;
+}
+
+.card_answer{
+  text-align: right;
+}
+
+.card_verticalline{
+  width: 1px; 
+  background-color: rgb(192, 192, 192); 
+  height: 150px; 
+  margin: auto;
+}
+
+.deckpage i{
+  background-color: transparent;
 }
 
 .creator{
@@ -153,16 +200,26 @@ button {
   font-size: smaller;
 }
 
+
 /*Study page*/
 
 .studycard{
-  height: 300px;
-  width: 500px;
+  height: 400px;
+  width: 600px;
   border-radius: 10px;
   border:  1px solid rgb(0, 0, 0);
   margin-left: auto;
   margin-right: auto;
   padding: 40px;
+  margin-top: 70px;
+  position: relative; bottom: 270px;
+}
+
+.studybutton{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  position: relative; bottom: 270px;
 }
 
 .verticalline{
@@ -175,12 +232,6 @@ button {
 
 .Answer{
   text-align: right;
-}
-
-.studybutton{
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
 }
 
 .bad__button {
@@ -214,6 +265,14 @@ button {
 
 .button{
   color: #ffffff;
+}
+
+.studycard{
+  background-color: #ffffff;
+}
+
+.studycard h1{
+  background-color: #ffffff;
 }
 
 /*nocards pop-up*/
@@ -259,6 +318,17 @@ button {
 
 .navigation img {
   width: 50px;
+}
+
+/* background*/
+
+.rectangle {
+  width: 350px;
+  height: 350px;
+  background: #F2EBFB;
+  border-radius: 50px;
+  transform: rotate(45deg); 
+  position: relative; right:140px; top: 40px;
 }
 
 /* login page */
