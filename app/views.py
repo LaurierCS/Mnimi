@@ -65,11 +65,26 @@ def study(request, deckId):
 
 def create_account(request):
     sentence = "Create Account Page"
+    form_class = UserCreationForm
+    template_name = "app/create_account.html"
+
+    if request.method == 'POST':
+        form = CreateAccountForm(request.POST)
+
+        if form.is_valid():
+            cleanForm = form.cleaned_data
+            user = User.objects.create_user(username=cleanForm['username'], email=cleanForm['email'], password=cleanForm['password'])
+            user.save()
+            return render(request, template_name="app/homepage.html")
+    
+    else:
+        form = CreateAccountForm()
 
     context = {
         "sentence": sentence,
+        "form": form,
     }
 
     template_name = "app/create_account.html"
 
-    return render(request, template_name)
+    return render(request, template_name, context)
