@@ -1,7 +1,14 @@
-<button class="trigger">New Deck</button>
 <div class="new_deck_modal_wrapper">
     <div class="new_deck_modal_content">
-        <span class="modal_close_button">&times;</span>
-        <h1>Create a New Deck</h1>
+        <div class="new_deck_modal_content_header">
+            <span class="modal_close_button">&times;</span>
+            <h1>Create a New Deck</h1>
+        </div>
+
+        <form class="create_deck_form" action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Create Deck">
+        </form>
     </div>
 </div>
