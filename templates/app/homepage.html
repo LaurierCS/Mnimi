@@ -7,21 +7,23 @@
 
 {% block content %}
     <main class="homepage">
-    <div class="homepage__header">
-        <h1>Your Decks</h1>
-        <button class="new_deck_button">+ New Deck</button>
-    </div>
-    <div class="decks">
-        {% for deck in decks %}
+        <div class="homepage__header">
+            <h1>Your Decks</h1>
+            <button class="new_deck_button">+ New Deck</button>
+            {% include 'components/new_deck_modal.html' %}
+        </div>
+        <div class="decks">
+            {% for deck in decks %}
             {% include 'components/Deck.html' %} 
-        {% endfor %}
-    </div>
-    <div class="temp_create_deck_form">
-        <form action="{% url 'index' %}", method="post">
-            {% csrf_token %}
-            {{form}}
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+            {% endfor %}
+        </div>
+        <div class="temp_create_deck_form">
+            <form action="{% url 'index' %}", method="post">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </main>
+<script src="{% static 'js/new_deck_modal.js' %}"></script>
 {% endblock content%}
