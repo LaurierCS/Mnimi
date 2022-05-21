@@ -13,7 +13,7 @@
         <p class="creator">By: {{deck.creator_username}}</p>
     </div>
     <div class="deckpage__buttons">
-        <button class="deckpage__buttons"><i class="fa-solid fa-plus"></i>New Card</button>
+        <button class="deckpage__buttons trigger"><i class="fa-solid fa-plus"></i>New Card</button>
         <button class="deckpage__buttons"><i class="fa-solid fa-share-nodes"></i>Share</button>
     </div>
     <div class="search">
@@ -28,5 +28,7 @@
         </div>
     </div>
 </div>
+{% include 'components/new_card_modal.html' %}
+<script src="{% static 'js/new_card_modal.js' %}"></script
 
 {% endblock content%}
