@@ -50,7 +50,7 @@ def deck(request, deckId):
     deckCards = Card.getDecksCards(deckId)
     if deckCards == False:
         deckCards = "Deck does not exist!"
-    
+        
     context = {
         "deck": deck,
         "deckCards": deckCards,

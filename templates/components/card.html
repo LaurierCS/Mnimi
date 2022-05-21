@@ -1,18 +1,6 @@
 <div class="card">
-    <div class="card__header">
-        <div class="card__header__name">
-            <p class="card__header__name__course">{{deck.deckName}}</p>
-            <P class="card__header__name__creator"> By: Jevin Sidhu</P>
-        </div>
-    <div class="card__specifics">
-        <p class="card__specifics__info">10 Cards Due, 10 Leeches</p>
-    </div>
-    </div>
-    <div class="card__study__button">
-        <button class="study"><i class="fa-solid fa-book"></i></i>Study</button>
-    </div>
-    <div class="card__buttons">
-        <button class="card__buttons__edit"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
-        <button class="card__buttons__share"><i class="fa-solid fa-share-nodes"></i>Share</button>
-    </div>
+    <button class="card_edit_button"><i class="fa-solid fa-pencil"></i></button>
+    <h1 class="card_question">{{card.front_text}}</h1>
+    <h1 class="card_answer">{{card.back_text}}</h1>
+    <div class="card_verticalline"></div>
 </div>

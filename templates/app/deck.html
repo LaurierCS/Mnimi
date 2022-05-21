@@ -20,12 +20,9 @@
         <input type="text" class="searching" placeholder="Search for a Card">
     </div>
     <div class="card_compenents">
-        <div class="card">
-            <button class="card_edit_button"><i class="fa-solid fa-pencil"></i></button>
-            <h1 class="card_question"> New Card Question </h1>
-            <h1 class="card_answer"> New Card answer</h1>
-            <div class="card_verticalline"></div>
-        </div>
+        {% for card in deckCards %}
+        {% include 'components/Card.html' %}
+        {% endfor %}
     </div>
 </div>
 {% include 'components/new_card_modal.html' %}
