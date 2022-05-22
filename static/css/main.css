@@ -35,12 +35,16 @@ button {
 
 .homepage {
   padding: 25px 50px;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, 270px);
 }
 
 .homepage__header {
   display: flex;
   justify-content: space-between;
   margin: 0 0 25px 0;
+  padding: 30px;
 }
 
 .deck{
@@ -95,22 +99,18 @@ button {
   height: 30px;
 }
 
-.decks{
-    display: grid;
-    gap: 50px;
-    grid-template-columns: repeat(auto-fit, 270px);
-}
 
 .deck i{
     margin-right: 5px;
 }
 
 .new_deck_button {
-  background-color: #ebd9fc;
+  background-color: #ffffff;
   padding: 10px;
-  border-radius: 10px;
-
+  border:  0.5px solid #9d83b4;
+  border-radius: 15px;
 }
+
 
 /* deck elements */
 
@@ -285,6 +285,18 @@ button {
   background-color: #EBD9FC;;
 }
 
+.nocards{
+  height: 400px;
+  width: 600px;
+  border-radius: 10px;
+  border:  1px solid rgb(0, 0, 0);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  margin-top: 70px;
+  position: relative; bottom: 270px;
+}
+
 /*
 1. Make display behavior grid
 2. Change the flow of the elements from row to column
@@ -405,6 +417,11 @@ button {
   transition: visibility 0s linear 0.25s, opacity 0.25 0s, transform 0.25s;
 }
 
+.new_deck_modal_wrapper h1{
+  line-height: 80px;
+
+}
+
 .new_deck_modal_content {
   position: absolute;
   top: 50%;
@@ -414,7 +431,20 @@ button {
   padding: 1rem 1.5rem;
   width: 24rem;
   border-radius: 0.5rem;
+  margin: 30px;
+  border: 1px solid #A9BFB6;
 }
+
+.new_deck_modal_wrapper input[type=submit]{
+  background-color: #ebd9fc;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  margin: 30px;
+  position: relative;
+  right: -85px;
+}
+
 
 /* create_card_modal */
 .new_card_modal_wrapper {
