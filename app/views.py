@@ -65,11 +65,21 @@ def study(request, deckId):
     dueCard = CardLedger.getDueCard(deckId, request.user.id)
     studyCard = Card.getStudyCard(dueCard[0])
     context = {
-        "studyCard": studyCard
+        "studyCard": studyCard,
+        "ledgerID": studyCard[1],
+        "deckID": deckId
     }
     template_name = "app/study.html"
 
     return render(request, template_name, context)
+
+@login_required
+def updateLedger(request, deckId, cardLedgerId, seconds):
+    print(deckId)
+    print(cardLedgerId)
+    print(seconds)
+
+    return HttpResponseRedirect(f"/study/{deckId}")
 
 def create_account(request):
     sentence = "Create Account Page"
