@@ -50,7 +50,7 @@ def deck(request, deckId):
     deckCards = Card.getDecksCards(deckId)
     if deckCards == False:
         deckCards = "Deck does not exist!"
-        
+
     context = {
         "deck": deck,
         "deckCards": deckCards,
@@ -62,10 +62,10 @@ def deck(request, deckId):
 
 @login_required
 def study(request, deckId):
-    dueCards = CardLedger.getDueCards(deckId, request.user.id)
-    print(dueCards)
+    dueCard = CardLedger.getDueCard(deckId, request.user.id)
+    studyCard = Card.getStudyCard(dueCard[0])
     context = {
-        "dueCards": dueCards
+        "studyCard": studyCard
     }
     template_name = "app/study.html"
 
@@ -73,7 +73,7 @@ def study(request, deckId):
 
 def create_account(request):
     sentence = "Create Account Page"
-    form_class = UserCreationForm
+    #form_class = UserCreationForm
     template_name = "app/create_account.html"
 
     if request.method == 'POST':
