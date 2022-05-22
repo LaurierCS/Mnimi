@@ -7,15 +7,31 @@
       src="https://kit.fontawesome.com/8f0bee7cc7.js"
       crossorigin="anonymous"
 ></script>
+
+<script type="text/javascript">
+    var start = new Date()
+
+    var ledgerId = "{{ledgerID}}"
+    var deckId = "{{deckID}}"
+
+    function test() {
+        var end = new Date()
+        var seconds = Math.floor((end-start) / 1000)
+        
+        window.location = `http://127.0.0.1:8000/update/${deckId}/${ledgerId}/${seconds}/`
+    }
+    
+</script>
+
 <div class="studypage">
     <div class="rectangle"></div>
     <div class="studycard">
-            <h1 class="Question">Question</h1>
-            <h1 class="Answer">Answer</h1>
+            <h1 class="Question">{{studyCard.0.front_text}}</h1>
+            <h1 class="Answer">{{studyCard.0.back_text}}</h1>
             <div class="verticalline"></div>
     </div>
     <div class="studybutton">
-        <button class="bad__button" style="color:white">Bad</button>
+        <button class="bad__button" style="color:white" onclick="test();">Bad</button>
         <button class="good__button" style="color:white">Good</button>
         <button class="great__button" style="color:white">Great</button>
     </div>

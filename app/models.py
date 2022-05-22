@@ -73,6 +73,21 @@ class Card(models.Model):
         except ObjectDoesNotExist:
             cards = False
         return cards
+    
+    def getStudyCard(studyLedger):
+        studyCard = Card.objects.get(id = studyLedger.card.id)
+        studyTuple = [studyCard, studyLedger.id]
+
+        return studyTuple
+    
+    #NEED TO UPDATE TO CREATE LEDGER FOR EVERY USER WHO HAS DECK
+    def createCard(deck_obj, cardInfo, user_acc):
+        newCard = Card(deck=deck_obj, front_text = cardInfo['frontText'], back_text = cardInfo['backText'], front_Img = cardInfo['frontImg'], back_Img = cardInfo['backImg'])
+        newCard.save()
+
+        CardLedger.createLedger(deck_obj, user_acc, newCard)
+
+        return
 
 class CardLedger(models.Model):
     id = models.AutoField(primary_key=True)
@@ -95,3 +110,13 @@ class CardLedger(models.Model):
     def getDueCards(deck_ID, user_ID):
         dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today())
         return dueCards
+
+    def getDueCard(deck_ID, user_ID):
+        dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today())[:1]
+        return dueCards
+    
+    def createLedger(deck_obj, user_acc, card_obj):
+        newLedger = CardLedger(deck = deck_obj, user_account = user_acc, card = card_obj, study_date = datetime.today())
+        newLedger.save()
+        
+        return

@@ -7,11 +7,12 @@
             <P class="deck__header__name__creator">Created by: {{deck.0.creator_username}}</P>
         </div>
     <div class="deck__specifics">
-        <p class="deck__specifics__info">{{ deck.1 }} Cards Due, 10 Leeches</p>
+        <p class="deck__specifics__info">{{ deck.1 }} Cards Due</p>
     </div>
-    </div>
-    <div class="deck__study__button">
-            <button class="study"><i class="fa-solid fa-book"></i></i>Study</button>
+</div>
+        <a class ="deck_study_link" href="/study/{{deck.0.id}}/">
+        <button class="study"><i class="fa-solid fa-book"></i></i>Study</button>
+        </a>
     </div>
     <div class="deck__buttons">
             <button class="deck__buttons__edit"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
