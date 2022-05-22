@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -15,6 +15,7 @@ def homepage(request):
 
         if form.is_valid():
             Deck.createDeck(form.cleaned_data['deckName'], request.user)
+            return HttpResponseRedirect("/")
     else:
         form = DeckForm()
 
@@ -25,8 +26,6 @@ def homepage(request):
         dueCards = CardLedger.getNumberofDueCards(deck.id, request.user.id)
         decksDueCardsTuple.append([deck, dueCards])
 
-    for decks in decksDueCardsTuple:
-        print(decks[1])
     context = {
         "decks": decksDueCardsTuple,
         "form": form
@@ -40,13 +39,22 @@ def deck(request, deckId):
     deck = Deck.getDeck(deckId, request.user.id)
     if deck == False:
         deck = "Deck does not exist!"
+    if request.method == 'POST':
+        form = CardForm(request.POST, request.FILES)
+        if form.is_valid():
+            Card.createCard(deck, form.cleaned_data, request.user)
+            return HttpResponseRedirect(f"/deck/{deckId}")
+    else:
+        form = CardForm()
+    
     deckCards = Card.getDecksCards(deckId)
     if deckCards == False:
         deckCards = "Deck does not exist!"
-    print(deckCards)
+
     context = {
         "deck": deck,
-        "deckCards": deckCards
+        "deckCards": deckCards,
+        "form": form,
     }
     template_name = "app/deck.html"
 
@@ -54,10 +62,10 @@ def deck(request, deckId):
 
 @login_required
 def study(request, deckId):
-    dueCards = CardLedger.getDueCards(deckId, request.user.id)
-    print(dueCards)
+    dueCard = CardLedger.getDueCard(deckId, request.user.id)
+    studyCard = Card.getStudyCard(dueCard[0])
     context = {
-        "dueCards": dueCards
+        "studyCard": studyCard
     }
     template_name = "app/study.html"
 
@@ -65,7 +73,7 @@ def study(request, deckId):
 
 def create_account(request):
     sentence = "Create Account Page"
-    form_class = UserCreationForm
+    #form_class = UserCreationForm
     template_name = "app/create_account.html"
 
     if request.method == 'POST':
