@@ -417,6 +417,10 @@ button {
   transition: visibility 0s linear 0.25s, opacity 0.25 0s, transform 0.25s;
 }
 
+.new_deck_modal_wrapper h1{
+  line-height: 80px;
+
+}
 
 .new_deck_modal_content {
   position: absolute;
@@ -427,9 +431,19 @@ button {
   padding: 1rem 1.5rem;
   width: 24rem;
   border-radius: 0.5rem;
+  margin: 30px;
+  border: 1px solid #A9BFB6;
 }
 
-
+.new_deck_modal_wrapper input[type=submit]{
+  background-color: #ebd9fc;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  margin: 30px;
+  position: relative;
+  right: -85px;
+}
 
 
 /* create_card_modal */
