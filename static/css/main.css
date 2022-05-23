@@ -160,6 +160,7 @@ button {
   border:  1px solid rgb(0, 0, 0);
   margin-top: 40px;
   background-color: #ffffff;
+  z-index: 2;
 }
 
 .card h1{
@@ -341,6 +342,7 @@ button {
   border-radius: 50px;
   transform: rotate(45deg); 
   position: relative; right:140px; top: 40px;
+  z-index: 0;
 }
 
 /* login page */
