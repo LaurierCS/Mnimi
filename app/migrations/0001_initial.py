@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('isFavourite', models.BooleanField(default=False)),
                 ('editable', models.BooleanField(default=False)),
                 ('cardCount', models.IntegerField(default=0)),
-                ('user_account', models.ForeignKey(default=None, on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL)),
+                ('user_account', models.ForeignKey(default=app.models.getUserOrCreate, on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -46,13 +46,13 @@ class Migration(migrations.Migration):
                 ('ELO', models.IntegerField(default=0)),
                 ('leech', models.IntegerField(default=0)),
                 ('card', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='app.card')),
-                ('deck', models.ForeignKey(default=None, on_delete=django.db.models.deletion.DO_NOTHING, to='app.deck')),
-                ('user_account', models.ForeignKey(default=None, on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL)),
+                ('deck', models.ForeignKey(default=app.models.getDeckorCreate, on_delete=django.db.models.deletion.DO_NOTHING, to='app.deck')),
+                ('user_account', models.ForeignKey(default=app.models.getUserOrCreate, on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.AddField(
             model_name='card',
             name='deck',
-            field=models.ForeignKey(default=None, on_delete=django.db.models.deletion.DO_NOTHING, to='app.deck'),
+            field=models.ForeignKey(default=app.models.getDeckorCreate, on_delete=django.db.models.deletion.DO_NOTHING, to='app.deck'),
         ),
     ]
