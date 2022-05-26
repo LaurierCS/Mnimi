@@ -1,6 +1,9 @@
 from django.urls import path, include
 from . import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('', views.homepage, name='index'),
     path('deck/<int:deckId>/', views.deck, name='deck'),
@@ -8,4 +11,4 @@ urlpatterns = [
     path('update/<int:deckId>/<int:cardLedgerId>/<int:seconds>/', views.updateLedger, name='update' ),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/create_account', views.create_account, name='create_account'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

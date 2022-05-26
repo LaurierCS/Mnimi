@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o5ai32_u%y&n!(tbftje5r57_3+edq6iivyks-30(d&@n@nodl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TRUE
+DEBUG = FALSE
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'mnimi-app.herokuapp.com']
 
 
 # Application definition
@@ -78,11 +78,14 @@ WSGI_APPLICATION = 'Webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': os.getenv('DBENGINE'),
+        'NAME': os.getenv('DBNAME'),
+        'HOST' : os.getenv('DBHOST'),
+        'PORT' : os.getenv('DBPORT'),
+        'USER' : os.getenv('DBUSER'),
+        'PASSWORD' : os.getenv('DBPASSWORD')
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
