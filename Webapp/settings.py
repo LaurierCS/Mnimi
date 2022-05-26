@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from pickle import FALSE, TRUE
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o5ai32_u%y&n!(tbftje5r57_3+edq6iivyks-30(d&@n@nodl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TRUE
+DEBUG = FALSE
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'mnimi-app.herokuapp.com']
 
 
 # Application definition
@@ -76,13 +77,20 @@ WSGI_APPLICATION = 'Webapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': env('DBENGINE'),
+        'NAME': env('DBNAME'),
+        'HOST' : env('DBHOST'),
+        'PORT' : env('DBPORT'),
+        'USER' : env('DBUSER'),
+        'PASSWORD' : env('DBPASSWORD')
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
