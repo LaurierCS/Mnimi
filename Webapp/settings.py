@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from pickle import FALSE, TRUE
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,14 +77,18 @@ WSGI_APPLICATION = 'Webapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DBENGINE'),
-        'NAME': os.getenv('DBNAME'),
-        'HOST' : os.getenv('DBHOST'),
-        'PORT' : os.getenv('DBPORT'),
-        'USER' : os.getenv('DBUSER'),
-        'PASSWORD' : os.getenv('DBPASSWORD')
+        'ENGINE': env('DBENGINE'),
+        'NAME': env('DBNAME'),
+        'HOST' : env('DBHOST'),
+        'PORT' : env('DBPORT'),
+        'USER' : env('DBUSER'),
+        'PASSWORD' : env('DBPASSWORD')
     }
 }
 
