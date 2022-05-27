@@ -1,6 +1,6 @@
 const editModal = document.querySelector('.edit_card_modal_wrapper');
-const editTrigger = document.querySelector('.edit_trigger');
-const editCloseButton = document.querySelector('.edit_card_modal_close_button');
+const editTrigger = document.querySelectorAll('.edit_trigger');
+const editCloseButton = document.querySelectorAll('.edit_card_modal_close_button');
 
 function toggleEditModal() {
     editModal.classList.toggle('show_modal');
@@ -12,5 +12,11 @@ function windowOnClick(event) {
     }
 }
 
-editTrigger.addEventListener('click', toggleEditModal);
-editCloseButton.addEventListener('click', toggleEditModal);
+editTrigger.forEach(trigger => {
+    trigger.addEventListener('click', toggleEditModal);
+})
+
+editCloseButton.forEach(button => {
+    button.addEventListener('click', toggleEditModal);
+})
+
