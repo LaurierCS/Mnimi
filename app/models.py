@@ -6,20 +6,11 @@ from django.db.models.fields import *
 from django.template.defaultfilters import slugify
 from django.core.exceptions import ObjectDoesNotExist
 
-def getUserOrCreate():
-    def_User = User.objects.get_or_create(username = '__defaultUSER__', password = '1234')
-    return def_User
-
-def getDeckorCreate():
-    def_User = User.objects.get(username = '__defaultUSER__')
-    def_Deck = Deck.objects.get_or_create(user_account = def_User, creator_username = "__defaultUSER__", deckName = "__defaultDeck__")
-    return def_Deck
-
 # Decks class
 class Deck(models.Model):
     id = models.AutoField(primary_key=True)
 
-    user_account =  models.ForeignKey(User, on_delete=models.DO_NOTHING,  default=getUserOrCreate)
+    user_account =  models.ForeignKey(User, on_delete=models.DO_NOTHING)
     creator_username = models.CharField(blank=False, max_length=50)
     deckName = models.CharField(blank=False, max_length=50)
     dateCreated = models.DateField(null=True, blank=True)
@@ -54,7 +45,7 @@ class Deck(models.Model):
 class Card(models.Model):
     id = models.AutoField(primary_key=True)
 
-    deck = models.ForeignKey(Deck, on_delete = models.DO_NOTHING, default=getDeckorCreate)
+    deck = models.ForeignKey(Deck, on_delete = models.DO_NOTHING)
     
     front_text = models.CharField(max_length=280)
     back_text = models.CharField(max_length=280)
@@ -92,8 +83,8 @@ class Card(models.Model):
 class CardLedger(models.Model):
     id = models.AutoField(primary_key=True)
 
-    deck = models.ForeignKey(Deck, on_delete = models.DO_NOTHING, default=getDeckorCreate)
-    user_account = models.ForeignKey(User, on_delete=models.DO_NOTHING,  default=getUserOrCreate)
+    deck = models.ForeignKey(Deck, on_delete = models.DO_NOTHING)
+    user_account = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     card = models.ForeignKey(Card, on_delete=models.DO_NOTHING)
 
     study_date = models.DateField(default = None)
