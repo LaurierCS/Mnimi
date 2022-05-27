@@ -1,16 +1,16 @@
-const modal = document.querySelector('.edit_card_modal_wrapper');
-const trigger = document.querySelector('.trigger');
-const closeButton = document.querySelector('.modal_close_button');
+const editModal = document.querySelector('.edit_card_modal_wrapper');
+const editTrigger = document.querySelector('.edit_trigger');
+const editCloseButton = document.querySelector('.edit_card_modal_close_button');
 
-function toggleModal() {
-    modal.classList.toggle('show_modal');
+function toggleEditModal() {
+    editModal.classList.toggle('show_modal');
 }
 
 function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
+    if (event.target === editModal) {
+        toggleEditModal();
     }
 }
 
-trigger.addEventListener('click', toggleModal);
-closeButton.addEventListener('click', toggleModal);
+editTrigger.addEventListener('click', toggleEditModal);
+editCloseButton.addEventListener('click', toggleEditModal);

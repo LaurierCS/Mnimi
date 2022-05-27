@@ -500,7 +500,7 @@ button {
 }
 
 
-.modal_close_button {
+.modal_close_button, .edit_card_modal_close_button {
   float: right;
   width: 1.5rem;
   line-height: 1.5rem;
@@ -510,7 +510,7 @@ button {
   background-color: lightgray;
 }
 
-.modal_close_button:hover {
+.modal_close_button:hover, .edit_card_modal_close_button:hover {
   background-color: darkgray;
 }
 
