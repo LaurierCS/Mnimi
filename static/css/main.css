@@ -277,17 +277,19 @@ button {
 
 /*nocards pop-up*/
 
-.back__button {
-  background-color: #EBD9FC;;
-}
+.nocards button{
+  background-color: #ebd9fc;
+  border-radius: 10px;;
+  width: 70px;
+  height: 30px;
+  margin: 20px;
+  position: relative;
+  right: -95px;
 
-.addcards__button {
-  background-color: #EBD9FC;;
 }
-
 .nocards{
-  height: 400px;
-  width: 600px;
+  height: 230px;
+  width: 500px;
   border-radius: 10px;
   border:  1px solid rgb(0, 0, 0);
   margin-left: auto;
@@ -295,6 +297,8 @@ button {
   padding: 40px;
   margin-top: 70px;
   position: relative; bottom: 270px;
+  background-color: white;
+  line-height: 40px;
 }
 
 /*
@@ -432,7 +436,6 @@ button {
   width: 24rem;
   border-radius: 0.5rem;
   margin: 30px;
-  border: 1px solid #A9BFB6;
 }
 
 .new_deck_modal_wrapper input[type=submit]{
