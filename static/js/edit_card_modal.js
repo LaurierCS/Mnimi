@@ -1,4 +1,4 @@
-const modal = document.querySelector('.edit_deck_modal_wrapper');
+const modal = document.querySelector('.edit_card_modal_wrapper');
 const trigger = document.querySelector('.trigger');
 const closeButton = document.querySelector('.modal_close_button');
 

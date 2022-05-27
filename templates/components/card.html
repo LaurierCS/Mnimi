@@ -1,6 +1,9 @@
+{% load static %}
 <div class="card">
-    <button class="card_edit_button"><i class="fa-solid fa-pencil"></i></button>
+    <button class="card_edit_button trigger"><i class="fa-solid fa-pencil"></i></button>
     <h1 class="card_question">{{card.front_text}}</h1>
     <h1 class="card_answer">{{card.back_text}}</h1>
     <div class="card_verticalline"></div>
 </div>
+{% include 'components/edit_card_modal.html' %}
+<script src="{% static 'js/edit_card_modal.js' %}"></script>

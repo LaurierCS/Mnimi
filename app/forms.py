@@ -18,7 +18,7 @@ class CardForm(forms.Form):
 # Edit Card Form
 class EditCardForm(forms.Form):
     frontText = forms.CharField(label="Edit Front Text", max_length=280)
-    frontImg = forms.FileField(label="Edit Front Image", requred=False)
+    frontImg = forms.FileField(label="Edit Front Image", required=False)
     backText = forms.CharField(label="Edit Back Text", max_length=280)
     backImg = forms.FileField(label="Edit Back Image", required=False)
 
