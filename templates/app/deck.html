@@ -24,8 +24,11 @@
         {% include 'components/card.html' %}
         {% endfor %}
     </div>
+    <div class="rectangle"></div>
 </div>
 {% include 'components/new_card_modal.html' %}
+{% include 'components/edit_card_modal.html' %}
 <script src="{% static 'js/new_card_modal.js' %}"></script>
+<script src="{% static 'js/edit_card_modal.js' %}"></script>
 
 {% endblock content%}
