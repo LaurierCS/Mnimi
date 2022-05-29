@@ -93,7 +93,9 @@ def create_account(request):
             cleanForm = form.cleaned_data
             user = User.objects.create_user(username=cleanForm['username'], email=cleanForm['email'], password=cleanForm['password'])
             user.save()
-            return render(request, template_name="app/homepage.html")
+            user = authenticate(username=cleanForm['username'], password=cleanForm['password'])
+            login(request, user)
+            return redirect('index')
     
     else:
         form = CreateAccountForm()
