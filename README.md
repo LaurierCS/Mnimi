@@ -41,18 +41,11 @@ and progress between sessions.
 
 # Acknowledgements
 
-many thanks to the following members of the development team and the Laurier Development 
-Pod Program for the support:
+Many thanks to the following members of the development team:
 
-1. Jevin Sidhu - Team Lead
-2. Tony Kechichian - Team Member
-3. Nora Chamseddin - Team Member
-4. Siddharth Khanna - Team Member
-5. Duncan Spizzirri - Team Member
+1. Tony Kechichian
+2. Nora Chamseddin
+3. Siddharth Khanna
+4. Duncan Spizzirri
 
-
-
-
-
-
-
+Also, thank you to Jevin Sidhu, who was the project advisor from LCS for this project.
