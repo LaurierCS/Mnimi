@@ -1,6 +1,6 @@
-const editModal = document.querySelector('.new_deck_modal_wrapper');
-const editTrigger = document.querySelectorAll('.new_deck_trigger');
-const editCloseButton = document.querySelectorAll('.new_deck_close_button');
+const editModal = document.querySelector('.share_modal_wrapper');
+const editTrigger = document.querySelectorAll('.share_trigger');
+const editCloseButton = document.querySelectorAll('.share_close_button');
 
 function toggleEditModal() {
     editModal.classList.toggle('show_modal');

@@ -1,0 +1,14 @@
+<div class="share_modal_wrapper">
+    <div class="share_modal_content">
+        <div class="share_modal_content_header">
+            <span class="share_modal_close_button">&times;</span>
+            <h1>Share Deck</h1>
+        </div>
+
+        <form class="share_form" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Share Deck">
+        </form>
+    </div>
+</div>

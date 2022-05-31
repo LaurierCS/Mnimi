@@ -8,7 +8,7 @@
 {% block content %}
 <div class="homepage__header">
     <h1>Your Decks</h1>
-    <button class="new_deck_button trigger">+ New Deck</button>
+    <button class="new_deck_button new_deck_trigger">+ New Deck</button>
 </div>
     <main class="homepage">
         <div class="decks">
@@ -18,5 +18,7 @@
         </div>
     </main>
     {% include 'components/new_deck_modal.html' %}
-    <script src="{% static 'js/new_deck_modal.js' %}"></script
+    {% include 'components/share_modal.html' %}
+    <script src="{% static 'js/new_deck_modal.js' %}"></script>
+    <script src="{% static 'js/share_modal.js' %}"></script>
 {% endblock content%}

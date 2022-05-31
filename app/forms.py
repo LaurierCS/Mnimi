@@ -27,3 +27,7 @@ class CreateAccountForm(forms.Form):
     email = forms.CharField(label="Email")
     username = forms.CharField(label="Username")
     password = forms.CharField(label="Password", widget=forms.PasswordInput)
+
+# Share Deck Form
+class ShareForm(forms.Form):
+    username = forms.CharField(label="Username")
