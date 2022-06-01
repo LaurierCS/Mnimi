@@ -7,7 +7,8 @@
 
 {% block content %}
 <div class="homepage__header">
-    <h1>Your Decks</h1>
+    
+    <h1>{{ user.get_username }}'s Decks</h1>
     <button class="new_deck_button new_deck_trigger">+ New Deck</button>
 </div>
     <main class="homepage">
