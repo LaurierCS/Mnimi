@@ -63,6 +63,11 @@ def deck(request, deckId):
 @login_required
 def study(request, deckId):
     dueCard = CardLedger.getDueCard(deckId, request.user.id)
+    if dueCard == False:
+
+        #MAKE IF STATEMENT STUDY.HTML
+
+    
     studyCard = Card.getStudyCard(dueCard[0])
     context = {
         "studyCard": studyCard,

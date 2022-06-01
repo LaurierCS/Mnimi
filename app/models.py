@@ -103,7 +103,11 @@ class CardLedger(models.Model):
         return dueCards
 
     def getDueCard(deck_ID, user_ID):
-        dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today())[:1]
+        try:
+            dueCards = CardLedger.objects.filter(deck__id = deck_ID, user_account__id = user_ID, study_date__lte = datetime.today())[:1]
+        except ObjectDoesNotExist:
+            dueCards = False
+        
         return dueCards
     
     def createLedger(deck_obj, user_acc, card_obj):
