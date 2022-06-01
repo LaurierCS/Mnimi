@@ -12,12 +12,17 @@ def homepage(request):
 
     if request.method == 'POST':
         form = DeckForm(request.POST)
+        shareForm = ShareForm(request.POST)
 
         if form.is_valid():
             Deck.createDeck(form.cleaned_data['deckName'], request.user)
             return HttpResponseRedirect("/")
+        
+        if shareForm.is_valid():
+            print("Share form was submitted!")
     else:
         form = DeckForm()
+        shareForm = ShareForm()
 
     # Retrieving users decks
     userDecks = Deck.getUsersDecks(request.user.id)
@@ -28,7 +33,8 @@ def homepage(request):
 
     context = {
         "decks": decksDueCardsTuple,
-        "form": form
+        "form": form,
+        "shareForm": shareForm
     }
     template_name = "app/homepage.html"
 
@@ -41,11 +47,17 @@ def deck(request, deckId):
         deck = "Deck does not exist!"
     if request.method == 'POST':
         form = CardForm(request.POST, request.FILES)
+        shareForm = ShareForm(request.POST)
+
         if form.is_valid():
             Card.createCard(deck, form.cleaned_data, request.user)
             return HttpResponseRedirect(f"/deck/{deckId}")
+
+        if shareForm.is_valid():
+            print("Share form was submitted!")
     else:
         form = CardForm()
+        shareForm = ShareForm()
     
     deckCards = Card.getDecksCards(deckId)
     if deckCards == False:
@@ -55,6 +67,7 @@ def deck(request, deckId):
         "deck": deck,
         "deckCards": deckCards,
         "form": form,
+        "shareForm": shareForm
     }
     template_name = "app/deck.html"
 

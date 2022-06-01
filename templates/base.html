@@ -39,7 +39,6 @@
 
         <!-- login/logout -->
         {% if user.is_authenticated %}
-          <label>{{ user.get_username }}</label>
           <a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
 
         {% else %}

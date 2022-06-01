@@ -1,31 +1,38 @@
-{% extends "base.html" %} {% load static %} {% block headers %}
-<title>Mnimi | Deck Page</title>
-{% endblock headers %} {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
-<script
+{% extends "base.html" %} 
+{% load static %} 
+{% block headers %}
+    <title>Mnimi | Deck Page</title>
+{% endblock headers %} 
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <script
       src="https://kit.fontawesome.com/8f0bee7cc7.js"
       crossorigin="anonymous"
-></script>
+    ></script>
 
-<div class="deckpage">
-    <div class="header">
-        <h1>{{deck.deckName}}</h1>
-        <p class="creator">By: {{deck.creator_username}}</p>
+    <div class="deckpage">
+        <div class="header">
+            <h1>{{deck.deckName}}</h1>
+            <p class="creator">By: {{deck.creator_username}}</p>
+        </div>
+        <div class="deckpage__buttons">
+            <button class="deckpage__buttons trigger"><i class="fa-solid fa-plus"></i>New Card</button>
+            <button button class="deckpage__buttons share_trigger"><i class="fa-solid fa-share-nodes"></i>Share</button>
+        </div>
+        <div class="card_compenents">
+            {% for card in deckCards %}
+            {% include 'components/card.html' %}
+            {% endfor %}
+        </div>
+        <div class="rectangle"></div>
     </div>
-    <div class="deckpage__buttons">
-        <button class="deckpage__buttons trigger"><i class="fa-solid fa-plus"></i>New Card</button>
-        <button class="deckpage__buttons"><i class="fa-solid fa-share-nodes"></i>Share</button>
-    </div>
-    <div class="card_compenents">
-        {% for card in deckCards %}
-        {% include 'components/card.html' %}
-        {% endfor %}
-    </div>
-    <div class="rectangle"></div>
-</div>
+    
 {% include 'components/new_card_modal.html' %}
 {% include 'components/edit_card_modal.html' %}
+{% include 'components/share_modal.html' %}
 <script src="{% static 'js/new_card_modal.js' %}"></script>
 <script src="{% static 'js/edit_card_modal.js' %}"></script>
+<script src="{% static 'js/share_modal.js' %}"></script>
 
 {% endblock content%}
