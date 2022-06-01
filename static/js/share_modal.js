@@ -1,22 +1,21 @@
-const editModal = document.querySelector('.share_modal_wrapper');
-const editTrigger = document.querySelectorAll('.share_trigger');
-const editCloseButton = document.querySelectorAll('.share_close_button');
+const shareModal = document.querySelector('.share_modal_wrapper');
+const shareTrigger = document.querySelectorAll('.share_trigger');
+const shareCloseButton = document.querySelectorAll('.share_modal_close_button');
 
-function toggleEditModal() {
-    editModal.classList.toggle('show_modal');
+function toggleShareModal() {
+    shareModal.classList.toggle('show_modal');
 }
 
-function windowOnClick(event) {
-    if (event.target === editModal) {
-        toggleEditModal();
+function shareModalWindowOnClick(event) {
+    if (event.target === shareModal) {
+        toggleShareModal();
     }
 }
 
-editTrigger.forEach(trigger => {
-    trigger.addEventListener('click', toggleEditModal);
+shareTrigger.forEach(trigger => {
+    trigger.addEventListener('click', toggleShareModal);
 })
 
-editCloseButton.forEach(button => {
-    button.addEventListener('click', toggleEditModal);
+shareCloseButton.forEach(button => {
+    button.addEventListener('click', toggleShareModal);
 })
-
