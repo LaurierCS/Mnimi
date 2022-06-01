@@ -561,9 +561,10 @@ button, input[type=submit] {
 }
 
 .create_card_form input , .edit_card_form input, .create_deck_form input, .share_form input {
-  margin-bottom: 10px;
+  margin: 10px 0;
   border: 0.5px solid rgb(99, 99, 99);
   border-radius: 4px;
   width: 100%;
+  padding: 5px;
 }
 
