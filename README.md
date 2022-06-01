@@ -7,6 +7,9 @@ Mnimi is a study deck web app designed to help users build and use their own dec
 study and learn content. Users will have the ability to create decks of flashcards
 and use them to improve their studying process.
 
+# Links
+- [Figma File](https://www.figma.com/file/h2TqlIKCjfBfFQgyknxZFc/Official-Pod-3-Design---Prototype?node-id=213%3A1142)
+
 # Features
 
 ## Deck Creation
