@@ -440,7 +440,7 @@ button {
   margin: 30px;
 }
 
-.new_deck_modal_wrapper input[type=submit]{
+.new_deck_modal_wrapper input[type=submit], .new_card_modal_wrapper input[type=submit], .edit_card_modal_wrapper input[type=submit], .share_modal_wrapper input[type=submit] {
   background-color: #ebd9fc;
   border-radius: 10px;
   width: 90px;
@@ -449,6 +449,10 @@ button {
   position: relative;
   right: -85px;
 }
+
+
+
+
 
 
 /* create_card_modal */
@@ -550,3 +554,17 @@ button {
   transform: scale(1);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
+
+/* modals*/
+
+.create_card_form, .edit_card_form, .share_form {
+  display: grid;
+}
+
+.create_card_form input , .edit_card_form input, .create_deck_form input, .share_form input {
+  margin-bottom: 10px;
+  border: 0.5px solid rgb(99, 99, 99);
+  border-radius: 4px
+
+}
+

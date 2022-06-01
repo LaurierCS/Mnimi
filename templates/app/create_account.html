@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block headers %}
+    <title>Mnimi | Create Account</title>
+{% endblock headers %}
+
 {% block content %}
 <div class="login_container">
   <div class="login_text">
@@ -11,8 +15,6 @@
       {% if user.is_authenticated %}
         <p>Your account doesn't have access to this page. To proceed,
         please login with an account that has access.</p>
-      {% else %}
-        <p>Please login to see this page.</p>
       {% endif %}
     {% endif %}  
   </div>
