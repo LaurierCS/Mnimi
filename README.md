@@ -1,17 +1,11 @@
-# mnimi Cheat Sheet
-![](https://imgur.com/qP9LFR6)
-Thanks for visiting the Mnimi walkthrough Guide
+# Mnimi
+![Mnimi](static/img/thumbnail.jpeg)
 
 # Overview
 
 Mnimi is a study deck web app designed to help users build and use their own decks to 
 study and learn content. Users will have the ability to create decks of flashcards
 and use them to improve their studying process.
-
-
-
-
-
 
 # Features
 
@@ -27,8 +21,8 @@ brains learn more effectively when we space out our learning over time.
 Users open a deck and are able to see a card with the question or diagram on the front.
 They can click the card to flip it and show the answer, then select how confident they
 were in their answer:
-1. green = Confident/knew it, 
-2. blue = medium/unsure
+1. blue = Confident/knew it, 
+2. green = know it, but want to see it again
 3. red = did not know
 
 Our Decks are designed to react to the user feedback on how well they knew the content,
@@ -49,3 +43,13 @@ Many thanks to the following members of the development team:
 4. Duncan Spizzirri
 
 Also, thank you to Jevin Sidhu, who was the project advisor from LCS for this project.
+
+# Remaining To-Dos:
+- [ ] Forgot password functionality
+- [ ] Add keyboard event listener to escape key to close modals
+- [ ] Mobile optimization polish
+- [ ] Create “Recently Studied” component
+- [ ] Implement search functionality
+- [ ] Address the background z-index issues on the deck page
+- [ ] Generate a new SECRET_KEY and load from .env
+- [ ] Card on the deck page requires additional styling
