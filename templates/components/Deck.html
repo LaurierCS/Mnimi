@@ -1,3 +1,4 @@
+{% load static %}
 <div class="deck">
     <div class="deck__header">
         <div class="deck__header__name">
@@ -16,7 +17,7 @@
         <div class="deck__buttons">
             <a class ="deck_edit_link" href="/deck/{{deck.0.id}}/">
             <button class="deck__buttons__edit"><i class="fa-solid fa-pen-to-square trigger"></i>Edit</button></a>
-            <button class="deck__buttons__share"><i class="fa-solid fa-share-nodes"></i>Share</button>
+            <button class="deck__buttons__share share_trigger"><i class="fa-solid fa-share-nodes"></i>Share</button>
         </div>
     </div>
 </div>

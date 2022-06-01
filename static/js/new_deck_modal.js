@@ -1,16 +1,22 @@
-const modal = document.querySelector('.new_deck_modal_wrapper');
-const trigger = document.querySelector('.trigger');
-const closeButton = document.querySelector('.modal_close_button');
+const editModal = document.querySelector('.new_deck_modal_wrapper');
+const editTrigger = document.querySelectorAll('.new_deck_trigger');
+const editCloseButton = document.querySelectorAll('.modal_close_button');
 
-function toggleModal() {
-    modal.classList.toggle('show_modal');
+function toggleEditModal() {
+    editModal.classList.toggle('show_modal');
 }
 
 function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
+    if (event.target === editModal) {
+        toggleEditModal();
     }
 }
 
-trigger.addEventListener('click', toggleModal);
-closeButton.addEventListener('click', toggleModal);
+editTrigger.forEach(trigger => {
+    trigger.addEventListener('click', toggleEditModal);
+})
+
+editCloseButton.forEach(button => {
+    button.addEventListener('click', toggleEditModal);
+})
+
