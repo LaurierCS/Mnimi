@@ -75,20 +75,22 @@ def deck(request, deckId):
 
 @login_required
 def study(request, deckId):
+    template_name = "app/study.html"
     dueCard = CardLedger.getDueCard(deckId, request.user.id)
+    #print(dueCard)
     if dueCard == False:
-
-        #MAKE IF STATEMENT STUDY.HTML
-
+        context = {
+            "studyCardVerify": False
+        }
+        return render(request, template_name, context)
     
     studyCard = Card.getStudyCard(dueCard[0])
     context = {
         "studyCard": studyCard,
         "ledgerID": studyCard[1],
-        "deckID": deckId
+        "deckID": deckId,
+        "studyCardVerify": True
     }
-    template_name = "app/study.html"
-
     return render(request, template_name, context)
 
 @login_required

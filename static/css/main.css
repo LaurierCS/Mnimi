@@ -205,6 +205,7 @@ button, input[type=submit] {
 /*Study page*/
 
 .studycard{
+  display: flex;
   height: 400px;
   width: 600px;
   border-radius: 10px;
@@ -214,6 +215,10 @@ button, input[type=submit] {
   padding: 40px;
   margin-top: 70px;
   position: relative; bottom: 270px;
+}
+
+.questionAndAnswer{
+  display: grid;
 }
 
 .studybutton{
@@ -297,10 +302,11 @@ button, input[type=submit] {
   margin-right: auto;
   padding: 40px;
   margin-top: 70px;
-  position: relative; bottom: 270px;
   background-color: white;
+  position: relative; bottom: 270px;
   line-height: 40px;
 }
+
 
 /*
 1. Make display behavior grid
@@ -421,6 +427,7 @@ button, input[type=submit] {
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25 0s, transform 0.25s;
+  z-index: 2;
 }
 
 .new_deck_modal_wrapper h1{
@@ -447,6 +454,7 @@ button, input[type=submit] {
   padding: 15px;
   width: 100%;
   justify-self: center;
+  
 }
 
 
@@ -466,6 +474,7 @@ button, input[type=submit] {
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25 0s, transform 0.25s;
+  z-index: 2;
 }
 
 .new_card_modal_content {
@@ -492,6 +501,7 @@ button, input[type=submit] {
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25 0s, transform 0.25s; 
+  z-index: 2;
 }
 
 .edit_card_modal_content {
@@ -518,6 +528,7 @@ button, input[type=submit] {
   visibility: hidden;
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25 0s, transform 0.25s; 
+  z-index: 2;
 }
 
 .share_modal_content {
@@ -568,3 +579,6 @@ button, input[type=submit] {
   padding: 5px;
 }
 
+.z-indexback{
+  z-index: 1;
+}
