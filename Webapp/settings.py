@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-from pickle import FALSE, TRUE
 import environ
 import dj_database_url
 
@@ -27,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o5ai32_u%y&n!(tbftje5r57_3+edq6iivyks-30(d&@n@nodl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = FALSE
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'mnimi-app.herokuapp.com']
 
@@ -46,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
