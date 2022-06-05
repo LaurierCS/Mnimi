@@ -20,30 +20,45 @@
         
         window.location = `http://127.0.0.1:8000/update/${deckId}/${ledgerId}/${seconds}/`
     }
+
+    function showAnswer() {
+        document.getElementById('answerSide').innerHTML = `<h1 class="Answer">{{studyCard.0.back_text}}</h1>
+                    {% if studyCard.0.back_Img %}
+                        <img src="{{studyCard.0.back_Img.url}}" height="200" width="200">
+                    {% endif %}`
+    }
     
 </script>
 
 <div class="studypage">
     <div class="rectangle"></div>
-    <div class="studycard">
-            <h1 class="Question">{{studyCard.0.front_text}}</h1>
-            <h1 class="Answer">{{studyCard.0.back_text}}</h1>
-            <div class="verticalline"></div>
-    </div>
-    <div class="studybutton">
-        <button class="bad__button" style="color:white" onclick="test();">Bad</button>
-        <button class="good__button" style="color:white">Good</button>
-        <button class="great__button" style="color:white">Great</button>
-    </div>
-    <div class="nocards">
-        <div class="header">
-            <h1>OH NO! You don't have any cards.</h1>
+    {% if studyCardVerify %} 
+        <div class="studycard" onclick="showAnswer();">
+                <div class="questionAndAnswer">
+                    <h1 class="Question">{{studyCard.0.front_text}}</h1>
+                    {% if studyCard.0.front_Img %}
+                        <img src="{{studyCard.0.front_Img.url}}" height="200" width="200">
+                    {% endif %}
+                </div>
+                <div class="verticalline"></div>
+                <div class="questionAndAnswer" id="answerSide"></div>    
         </div>
-        <div class="nocards__buttons">
-            <button class="back__button">Go Back</button>
-            <button class="addcards__button">Add cards</button>
+        <div class="studybutton">
+            <button class="bad__button" style="color:white" onclick="test();">Bad</button>
+            <button class="good__button" style="color:white">Good</button>
+            <button class="great__button" style="color:white">Great</button>
         </div>
-    </div>
+    {% else %}  
+        <div class="nocards">
+            <div class="header">
+                <h1>OH NO! You don't have any cards.</h1>
+            </div>
+            <div class="nocards__buttons">
+                <button class="back__button">Go Back</button>
+                <button class="addcards__button">Add cards</button>
+            </div>
+        </div>
+    {% endif %}
 </div>
 
 {% endblock content%}

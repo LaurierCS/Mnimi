@@ -12,18 +12,22 @@
     ></script>
 
     <div class="deckpage">
-        <div class="header">
-            <h1>{{deck.deckName}}</h1>
-            <p class="creator">By: {{deck.creator_username}}</p>
-        </div>
-        <div class="deckpage__buttons">
-            <button class="deckpage__buttons trigger"><i class="fa-solid fa-plus"></i>New Card</button>
-            <button button class="deckpage__buttons share_trigger"><i class="fa-solid fa-share-nodes"></i>Share</button>
-        </div>
-        <div class="card_compenents">
-            {% for card in deckCards %}
-            {% include 'components/card.html' %}
-            {% endfor %}
+        <div class="z-indexback">
+
+        
+            <div class="header">
+                <h1>{{deck.deckName}}</h1>
+                <p class="creator">By: {{deck.creator_username}}</p>
+            </div>
+            <div class="deckpage__buttons">
+                <button class="deckpage__buttons trigger"><i class="fa-solid fa-plus"></i>New Card</button>
+                <button button class="deckpage__buttons share_trigger"><i class="fa-solid fa-share-nodes"></i>Share</button>
+            </div>
+            <div class="card_compenents">
+                {% for card in deckCards %}
+                {% include 'components/card.html' %}
+                {% endfor %}
+            </div>
         </div>
         <div class="rectangle"></div>
     </div>
