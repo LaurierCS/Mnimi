@@ -58,6 +58,7 @@ button, input[type=submit] {
     background-color: white;
     width: 270px;
     line-height: 1.6;
+    box-shadow: 4px 4px #888888;
 }
 .deck .deck__header .deck__header__name .deck__header__name__course{
     font-weight: bold;
@@ -109,6 +110,7 @@ button, input[type=submit] {
   padding: 10px;
   border:  0.5px solid #9d83b4;
   border-radius: 15px;
+  box-shadow: 2px 2px #888888;
 }
 
 

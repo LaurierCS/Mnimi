@@ -58,6 +58,7 @@ def deck(request, deckId):
     else:
         form = CardForm()
         shareForm = ShareForm()
+        editForm = EditCardForm()
     
     deckCards = Card.getDecksCards(deckId)
     if deckCards == False:
@@ -67,7 +68,8 @@ def deck(request, deckId):
         "deck": deck,
         "deckCards": deckCards,
         "form": form,
-        "shareForm": shareForm
+        "shareForm": shareForm,
+        "editForm": editForm,
     }
     template_name = "app/deck.html"
 
@@ -128,3 +130,14 @@ def create_account(request):
     template_name = "app/create_account.html"
 
     return render(request, template_name, context)
+
+def edit_card(request, cardId):
+    print(cardId)
+    ### NEED TO CONTINUE WITH THIS!!! AND IN THE EDIT CARD MODAL SCRIPT STUFF BLAH BLAH BLAH, CHANGE THE FORM TO ALLOW PEOPLE TO DESELECT PHOTOS AND HAVE THE FORM LOAD WITH THE CARD DATA.
+    if request.method == 'POST':
+        editForm = EditCardForm(request.POST, request.FILES)
+
+        if editForm.is_valid():
+            print(editForm.cleaned_data)
+
+    return
