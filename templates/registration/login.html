@@ -32,7 +32,7 @@
         <input type="hidden" name="next" value="{{ next }}" />
       </form>
       <div class="login_wrapper__footer">
-        <div class="create_account_link"><a href="{% url 'create_account' %}">Create an account</a></div>
+        <div class="create_account_link"><a href="{% url 'create_account' %}" class="link">Create an account</a></div>
         {# Assumes you setup the password_reset view in your URLconf #}
       </div>
     </div> 

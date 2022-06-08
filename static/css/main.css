@@ -320,9 +320,14 @@ button, input[type=submit] {
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #F2EBFB;
-  padding: 25px 50px;
-  background-color: #F2EBFB;
+  padding: 20px 50px;
+  background-image: linear-gradient(to right, rgb(110, 0, 144) , #F2EBFB);
+  z-index: 1;
+}
+
+.navBar {
+  background-image: linear-gradient(to right, rgb(110, 0, 144) , #F2EBFB);
+  z-index: 1;
 }
 
 /* 
@@ -351,7 +356,7 @@ button, input[type=submit] {
   background: #F2EBFB;
   border-radius: 50px;
   transform: rotate(45deg); 
-  position: relative; right:140px; top: 40px;
+  position: relative; right:140px; top: 55px;
   z-index: 0;
 }
 
@@ -581,4 +586,9 @@ button, input[type=submit] {
 
 .z-indexback{
   z-index: 1;
+}
+
+.link {
+  color: #008CBA;
+  text-decoration: underline;
 }
