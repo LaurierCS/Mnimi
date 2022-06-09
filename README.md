@@ -7,8 +7,7 @@ Mnimi is a study deck web app designed to help users build and use their own dec
 study and learn content. Users will have the ability to create decks of flashcards
 and use them to improve their studying process.
 
-# Links
-- [Figma File](https://www.figma.com/file/h2TqlIKCjfBfFQgyknxZFc/Official-Pod-3-Design---Prototype?node-id=213%3A1142)
+This project was built using [Django](https://www.djangoproject.com/) and written in HTML, CSS, JavaScript, and Python. It was designed in Figma; you can [view the file here](https://www.figma.com/file/h2TqlIKCjfBfFQgyknxZFc/Official-Pod-3-Design---Prototype?node-id=213%3A1142).
 
 # Features
 
@@ -36,6 +35,17 @@ repetition.
 Users login using email and password credentials to allow them to save decks, study master,
 and progress between sessions.
 
+# Installation
+```
+pip install pipenv
+
+pipenv --python 3.9
+pipenv shell
+pipenv install -r requirements.txt
+
+python3 manage.py runserver
+```
+
 # Acknowledgements
 
 Many thanks to the following members of the development team:
@@ -47,12 +57,15 @@ Many thanks to the following members of the development team:
 
 Also, thank you to Jevin Sidhu, who was the project advisor from LCS for this project.
 
-# Remaining To-Dos:
-- [ ] Forgot password functionality
+# Remaining To-Dos
 - [ ] Add keyboard event listener to escape key to close modals
-- [ ] Mobile optimization polish
+- [ ] Improve the styling on mobile devices
 - [ ] Create “Recently Studied” component
-- [ ] Implement search functionality
 - [ ] Address the background z-index issues on the deck page
 - [ ] Generate a new SECRET_KEY and load from .env
-- [ ] Card on the deck page requires additional styling
+- [ ] Style the card on the deck page
+- [ ] Add search functionality
+- [ ] Add forgot password functionality
+- [ ] Add sharing functionality
+- [ ] Add editing functionality
+- [ ] Improve ranking functionality
