@@ -36,6 +36,7 @@ Users login using email and password credentials to allow them to save decks, st
 and progress between sessions.
 
 # Installation
+
 ```
 pip install pipenv
 
@@ -45,6 +46,8 @@ pipenv install -r requirements.txt
 
 python3 manage.py runserver
 ```
+
+Note: You'll need to drop a `.env` file into the `Webapp` directory. Contact the repository owners for access.
 
 # Acknowledgements
 
@@ -62,7 +65,6 @@ Also, thank you to Jevin Sidhu, who was the project advisor from LCS for this pr
 - [ ] Improve the styling on mobile devices
 - [ ] Create “Recently Studied” component
 - [ ] Address the background z-index issues on the deck page
-- [ ] Generate a new SECRET_KEY and load from .env
 - [ ] Style the card on the deck page
 - [ ] Add search functionality
 - [ ] Add forgot password functionality
