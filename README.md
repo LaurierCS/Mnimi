@@ -56,3 +56,6 @@ Also, thank you to Jevin Sidhu, who was the project advisor from LCS for this pr
 - [ ] Address the background z-index issues on the deck page
 - [ ] Generate a new SECRET_KEY and load from .env
 - [ ] Card on the deck page requires additional styling
+- [ ] Sharing functionality
+- [ ] editing functionality
+- [ ] improved ranking functionality
