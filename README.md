@@ -1,5 +1,5 @@
 # Mnimi
-![Mnimi](static/img/thumbnail.jpeg)
+![Mnimi](static/img/thumbnail.png)
 
 # Overview
 
