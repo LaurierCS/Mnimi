@@ -58,6 +58,7 @@ button, input[type=submit] {
     background-color: white;
     width: 270px;
     line-height: 1.6;
+    box-shadow: 4px 4px #888888;
 }
 .deck .deck__header .deck__header__name .deck__header__name__course{
     font-weight: bold;
@@ -109,6 +110,7 @@ button, input[type=submit] {
   padding: 10px;
   border:  0.5px solid #9d83b4;
   border-radius: 15px;
+  box-shadow: 2px 2px #888888;
 }
 
 
@@ -452,7 +454,7 @@ button, input[type=submit] {
   margin: 30px;
 }
 
-.new_deck_modal_wrapper input[type=submit], .new_card_modal_wrapper input[type=submit], .edit_card_modal_wrapper input[type=submit], .share_modal_wrapper input[type=submit] {
+.new_deck_modal_wrapper input[type=submit], .new_card_modal_wrapper input[type=submit], .edit_card_modal_wrapper input[type=submit], .share_modal_wrapper input[type=submit], .delete_card_modal_wrapper[type=submit] {
   background-color: #ebd9fc;
   border-radius: 10px;
   border: none;
@@ -495,7 +497,7 @@ button, input[type=submit] {
 
 /* edit_card modal */
 
-.edit_card_modal_wrapper {
+.edit_card_modal_wrapper, .delete_card_modal_wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -549,7 +551,7 @@ button, input[type=submit] {
 
 /* general modal */
 
-.modal_close_button, .edit_card_modal_close_button, .share_modal_close_button, .new_deck_close_button {
+.modal_close_button, .edit_card_modal_close_button, .share_modal_close_button, .new_deck_close_button, .delete_card_modal_close_button {
   float: right;
   width: 1.5rem;
   line-height: 1.5rem;
@@ -559,7 +561,7 @@ button, input[type=submit] {
   background-color: lightgray;
 }
 
-.modal_close_button:hover, .edit_card_modal_close_button:hover, .share_modal_close_button:hover, new_deck_close_button:hover {
+.modal_close_button:hover, .edit_card_modal_close_button:hover, .share_modal_close_button:hover, .new_deck_close_button:hover, .delete_card_modal_close_button:hover {
   background-color: darkgray;
 }
 

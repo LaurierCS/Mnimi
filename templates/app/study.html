@@ -14,11 +14,13 @@
     var ledgerId = "{{ledgerID}}"
     var deckId = "{{deckID}}"
 
+    console.log(deckId)
+
     function test() {
         var end = new Date()
         var seconds = Math.floor((end-start) / 1000)
         
-        window.location = `http://127.0.0.1:8000/update/${deckId}/${ledgerId}/${seconds}/`
+        window.location = `/update/${deckId}/${ledgerId}/${seconds}/`
     }
 
     function showAnswer() {
@@ -54,8 +56,8 @@
                 <h1>OH NO! You don't have any cards.</h1>
             </div>
             <div class="nocards__buttons">
-                <button class="back__button">Go Back</button>
-                <button class="addcards__button">Add cards</button>
+                <a href="/"><button class="back__button">Go Back</button> </a>
+                <a href="/deck/{{deckID}}/"><button class="addcards__button">Add cards</button></a>
             </div>
         </div>
     {% endif %}

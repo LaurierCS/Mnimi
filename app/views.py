@@ -58,6 +58,7 @@ def deck(request, deckId):
     else:
         form = CardForm()
         shareForm = ShareForm()
+        editForm = EditCardForm()
     
     deckCards = Card.getDecksCards(deckId)
     if deckCards == False:
@@ -67,7 +68,8 @@ def deck(request, deckId):
         "deck": deck,
         "deckCards": deckCards,
         "form": form,
-        "shareForm": shareForm
+        "shareForm": shareForm,
+        "editForm": editForm,
     }
     template_name = "app/deck.html"
 
@@ -80,7 +82,8 @@ def study(request, deckId):
     #print(dueCard)
     if dueCard == False:
         context = {
-            "studyCardVerify": False
+            "studyCardVerify": False,
+            "deckID": deckId
         }
         return render(request, template_name, context)
     
@@ -103,7 +106,6 @@ def updateLedger(request, deckId, cardLedgerId, seconds):
 
 def create_account(request):
     sentence = "Create Account Page"
-    #form_class = UserCreationForm
     template_name = "app/create_account.html"
 
     if request.method == 'POST':
@@ -128,3 +130,12 @@ def create_account(request):
     template_name = "app/create_account.html"
 
     return render(request, template_name, context)
+
+def delete_card(request, deckId, cardId):
+    Card.deleteCard(deckId, cardId)
+
+    return HttpResponseRedirect(f"/deck/{deckId}/")
+
+def delete_deck(request, deckId):
+    Deck.deleteDeck(deckId)
+    return HttpResponseRedirect("/")
