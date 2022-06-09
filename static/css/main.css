@@ -572,6 +572,7 @@ button, input[type=submit] {
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+
 /* modals*/
 
 .create_card_form, .edit_card_form, .share_form {

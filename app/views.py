@@ -43,6 +43,7 @@ def homepage(request):
 @login_required
 def deck(request, deckId):
     deck = Deck.getDeck(deckId, request.user.id)
+    print(deck)
     if deck == False:
         deck = "Deck does not exist!"
     if request.method == 'POST':
@@ -97,10 +98,8 @@ def study(request, deckId):
     return render(request, template_name, context)
 
 @login_required
-def updateLedger(request, deckId, cardLedgerId, seconds):
-    print(deckId)
-    print(cardLedgerId)
-    print(seconds)
+def updateLedger(request, deckId, cardLedgerId, seconds, choice):
+    CardLedger.updateLedger(cardLedgerId, seconds, choice)
 
     return HttpResponseRedirect(f"/study/{deckId}")
 
@@ -131,11 +130,23 @@ def create_account(request):
 
     return render(request, template_name, context)
 
+@login_required
 def delete_card(request, deckId, cardId):
-    Card.deleteCard(deckId, cardId)
+    Card.deleteCard(request.user.id, deckId, cardId)
 
     return HttpResponseRedirect(f"/deck/{deckId}/")
 
+@login_required
 def delete_deck(request, deckId):
     Deck.deleteDeck(deckId)
     return HttpResponseRedirect("/")
+
+@login_required
+def share(request, deckId):
+    if request.method == 'POST':
+        shareForm = ShareForm(request.POST)
+
+        if shareForm.is_valid():
+            Deck.shareDeck(deckId, shareForm.cleaned_data['username'])
+
+    return HttpResponseRedirect(f"/deck/{deckId}/")

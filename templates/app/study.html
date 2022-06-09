@@ -10,24 +10,22 @@
 
 <script type="text/javascript">
     var start = new Date()
-
+    var seconds = 0
     var ledgerId = "{{ledgerID}}"
     var deckId = "{{deckID}}"
 
-    console.log(deckId)
-
-    function test() {
-        var end = new Date()
-        var seconds = Math.floor((end-start) / 1000)
-        
-        window.location = `/update/${deckId}/${ledgerId}/${seconds}/`
+    function submitCard(choice) {
+        window.location = `/update/${deckId}/${ledgerId}/${seconds}/${choice}/`
     }
 
     function showAnswer() {
-        document.getElementById('answerSide').innerHTML = `<h1 class="Answer">{{studyCard.0.back_text}}</h1>
+        var end = new Date()
+        seconds = Math.floor((end-start) / 1000)
+        document.getElementById('answerSide').innerHTML = `<h2 class="Answer">{{studyCard.0.back_text}}</h2>
                     {% if studyCard.0.back_Img %}
                         <img src="{{studyCard.0.back_Img.url}}" height="200" width="200">
                     {% endif %}`
+        document.getElementById('studyButtons').style = 'display: true;'
     }
     
 </script>
@@ -37,7 +35,7 @@
     {% if studyCardVerify %} 
         <div class="studycard" onclick="showAnswer();">
                 <div class="questionAndAnswer">
-                    <h1 class="Question">{{studyCard.0.front_text}}</h1>
+                    <h2 class="Question">{{studyCard.0.front_text}}</h2>
                     {% if studyCard.0.front_Img %}
                         <img src="{{studyCard.0.front_Img.url}}" height="200" width="200">
                     {% endif %}
@@ -45,15 +43,15 @@
                 <div class="verticalline"></div>
                 <div class="questionAndAnswer" id="answerSide"></div>    
         </div>
-        <div class="studybutton">
-            <button class="bad__button" style="color:white" onclick="test();">Bad</button>
-            <button class="good__button" style="color:white">Good</button>
-            <button class="great__button" style="color:white">Great</button>
+        <div class="studybutton" id="studyButtons" style="display: none;">
+            <button class="bad__button" style="color:white" onclick="submitCard(1);">Bad</button>
+            <button class="good__button" style="color:white" onclick="submitCard(2);">Good</button>
+            <button class="great__button" style="color:white" onclick="submitCard(3);">Great</button>
         </div>
     {% else %}  
         <div class="nocards">
             <div class="header">
-                <h1>OH NO! You don't have any cards.</h1>
+                <h1>You're done studying!</h1>
             </div>
             <div class="nocards__buttons">
                 <a href="/"><button class="back__button">Go Back</button> </a>

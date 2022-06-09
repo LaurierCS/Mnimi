@@ -1,5 +1,5 @@
 # Imports
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.fields import *
@@ -48,6 +48,18 @@ class Deck(models.Model):
             except:
                 pass
         Deck.objects.filter(id = deckId).delete()
+        return
+
+    def shareDeck(deckId, username):
+        user_acc = User.objects.get(username = username)
+        deck = Deck.objects.get(id = deckId)
+        new_deck = Deck(id = deckId, user_account = user_acc, creator_username = deck.creator_username, deckName = deck.deckName)
+        new_deck.save()
+        #cards = Card.getDecksCards(deckId)
+
+        # for card in cards:
+        #     CardLedger.createLedger(new_deck, user_acc, card)
+
         return
 
 
@@ -143,4 +155,34 @@ class CardLedger(models.Model):
     
     def deleteLedger(deckId, cardId):
         CardLedger.objects.filter(deck__id = deckId, card__id = cardId).delete()
+        return
+
+    def updateLedger(cardLedgerId, seconds, choice):
+        ledger = CardLedger.objects.get(id = cardLedgerId)
+        if choice == 1:
+            ledger.ELO = 0
+            ledger.save()
+            return
+
+        newELO = ledger.ELO / 2
+        if ledger.ELO == 0:
+            newELO = 300
+            ledger.ELO = newELO
+            numberOfDays = ledger.ELO % 100
+            ledger.study_date = datetime.today() + timedelta(days = numberOfDays)
+            ledger.save()
+            return
+
+        if choice == 2:
+            ledger.ELO += newELO
+            numberOfDays = ledger.ELO % 100
+            ledger.study_date = datetime.today() + timedelta(days = numberOfDays)
+            ledger.save()
+        elif choice == 3:
+            ledger.ELO += newELO * 1.5
+            numberOfDays = ledger.ELO % 100
+            ledger.study_date = datetime.today() + timedelta(days = numberOfDays)
+            ledger.save()
+        
+
         return
