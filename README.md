@@ -7,8 +7,7 @@ Mnimi is a study deck web app designed to help users build and use their own dec
 study and learn content. Users will have the ability to create decks of flashcards
 and use them to improve their studying process.
 
-# Links
-- [Figma File](https://www.figma.com/file/h2TqlIKCjfBfFQgyknxZFc/Official-Pod-3-Design---Prototype?node-id=213%3A1142)
+This project was built using [Django](https://www.djangoproject.com/) and written in HTML, CSS, JavaScript, and Python. It was designed in Figma [(view the file)](https://www.figma.com/file/h2TqlIKCjfBfFQgyknxZFc/Official-Pod-3-Design---Prototype?node-id=213%3A1142).
 
 # Features
 
@@ -36,6 +35,17 @@ repetition.
 Users login using email and password credentials to allow them to save decks, study master,
 and progress between sessions.
 
+# Installation:
+```
+pip install pipenv
+
+pipenv --python 3.9
+pipenv shell
+pipenv install -r requirements.txt
+
+python3 manage.py runserver
+```
+
 # Acknowledgements
 
 Many thanks to the following members of the development team:
@@ -57,5 +67,5 @@ Also, thank you to Jevin Sidhu, who was the project advisor from LCS for this pr
 - [ ] Generate a new SECRET_KEY and load from .env
 - [ ] Card on the deck page requires additional styling
 - [ ] Sharing functionality
-- [ ] editing functionality
-- [ ] improved ranking functionality
+- [ ] Editing functionality
+- [ ] Improved ranking functionality
