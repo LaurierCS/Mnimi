@@ -35,7 +35,7 @@ repetition.
 Users login using email and password credentials to allow them to save decks, study master,
 and progress between sessions.
 
-# Installation:
+# Installation
 ```
 pip install pipenv
 
@@ -57,7 +57,7 @@ Many thanks to the following members of the development team:
 
 Also, thank you to Jevin Sidhu, who was the project advisor from LCS for this project.
 
-# Remaining To-Dos:
+# Remaining To-Dos
 - [ ] Add keyboard event listener to escape key to close modals
 - [ ] Improve the styling on mobile devices
 - [ ] Create “Recently Studied” component
