@@ -1,6 +1,7 @@
 <script>
     function getCardID() {
-        document.getElementById('editCardForm').action = `/edit/${x}/`
+        document.getElementById('editCardForm').action = `/edit/{{deck.id}}/${x}/`
+        document.getElementById('id_frontText').innerHTML += "value = 'hello'" 
     }
 </script>
 

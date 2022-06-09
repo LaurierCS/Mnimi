@@ -39,6 +39,16 @@ class Deck(models.Model):
         new_deck = Deck(user_account = user_acc, creator_username = user_acc.username, deckName = deck_name, dateCreated = datetime.today(), editable = True )
         new_deck.save()
         return
+    
+    def deleteDeck(deckId):
+        cards = Card.objects.filter(deck__id = deckId)
+        for card in cards:
+            try:
+                Card.deleteCard(deckId, card.id)
+            except:
+                pass
+        Deck.objects.filter(id = deckId).delete()
+        return
 
 
 # Cards class
@@ -79,6 +89,21 @@ class Card(models.Model):
         CardLedger.createLedger(deck_obj, user_acc, newCard)
 
         return
+    
+    def deleteCard(deckId, cardId):
+        CardLedger.deleteLedger(deckId, cardId)
+        card = Card.objects.filter(id = cardId, deck__id = deckId)
+        for img in card:
+            try:
+                img.front_Img.delete()
+            except:
+                pass
+            try:
+                img.back_Img.delete()
+            except:
+                pass
+            img.delete()
+        return
 
 class CardLedger(models.Model):
     id = models.AutoField(primary_key=True)
@@ -114,4 +139,8 @@ class CardLedger(models.Model):
         newLedger = CardLedger(deck = deck_obj, user_account = user_acc, card = card_obj, study_date = datetime.today())
         newLedger.save()
         
+        return
+    
+    def deleteLedger(deckId, cardId):
+        CardLedger.objects.filter(deck__id = deckId, card__id = cardId).delete()
         return

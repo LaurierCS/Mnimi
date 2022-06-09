@@ -11,5 +11,6 @@ urlpatterns = [
     path('update/<int:deckId>/<int:cardLedgerId>/<int:seconds>/', views.updateLedger, name='update' ),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/create_account', views.create_account, name='create_account'),
-    path('edit/<int:cardId>/', views.edit_card, name='edit'),
+    path('delete_card/<int:deckId>/<int:cardId>/', views.delete_card, name='deleteCard'),
+    path('delete_deck/<int:deckId>/', views.delete_deck, name='deleteDeck'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

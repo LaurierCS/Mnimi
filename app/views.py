@@ -82,7 +82,8 @@ def study(request, deckId):
     #print(dueCard)
     if dueCard == False:
         context = {
-            "studyCardVerify": False
+            "studyCardVerify": False,
+            "deckID": deckId
         }
         return render(request, template_name, context)
     
@@ -105,7 +106,6 @@ def updateLedger(request, deckId, cardLedgerId, seconds):
 
 def create_account(request):
     sentence = "Create Account Page"
-    #form_class = UserCreationForm
     template_name = "app/create_account.html"
 
     if request.method == 'POST':
@@ -131,13 +131,11 @@ def create_account(request):
 
     return render(request, template_name, context)
 
-def edit_card(request, cardId):
-    print(cardId)
-    ### NEED TO CONTINUE WITH THIS!!! AND IN THE EDIT CARD MODAL SCRIPT STUFF BLAH BLAH BLAH, CHANGE THE FORM TO ALLOW PEOPLE TO DESELECT PHOTOS AND HAVE THE FORM LOAD WITH THE CARD DATA.
-    if request.method == 'POST':
-        editForm = EditCardForm(request.POST, request.FILES)
+def delete_card(request, deckId, cardId):
+    Card.deleteCard(deckId, cardId)
 
-        if editForm.is_valid():
-            print(editForm.cleaned_data)
+    return HttpResponseRedirect(f"/deck/{deckId}/")
 
-    return
+def delete_deck(request, deckId):
+    Deck.deleteDeck(deckId)
+    return HttpResponseRedirect("/")
